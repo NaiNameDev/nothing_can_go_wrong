@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Pickable" load_steps=3 format=3 uid="uid://daey2gmvm6yrm"]
+
+[ext_resource type="Script" path="res://trees/resource/pickable/script/pickable.gd" id="1_3avah"]
+[ext_resource type="PackedScene" uid="uid://ip5e8m65mmey" path="res://trees/resource/pickable/media/model_placeholder.tscn" id="1_6x788"]
+
+[resource]
+script = ExtResource("1_3avah")
+name = "bottle of oil"
+model = ExtResource("1_6x788")
+adding = 0.5

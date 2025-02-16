@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=3 uid="uid://cwj8jnd31c3fi"]
+
+[ext_resource type="Script" path="res://trees/station/check_station/script/tv.gd" id="1_rue8m"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_7vame"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_64aec"]
+viewport_path = NodePath("MeshInstance3D/SubViewport")
+
+[node name="tv" type="Node3D" node_paths=PackedStringArray("grid")]
+script = ExtResource("1_rue8m")
+grid = NodePath("MeshInstance3D/SubViewport/GridContainer")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.2, 0, 0, 0, 2.7, 0, 0, 0, 4.9, 0, 0, 0)
+mesh = SubResource("BoxMesh_7vame")
+
+[node name="SubViewport" type="SubViewport" parent="MeshInstance3D"]
+disable_3d = true
+
+[node name="GridContainer" type="GridContainer" parent="MeshInstance3D/SubViewport"]
+offset_right = 512.0
+offset_bottom = 512.0
+
+[node name="Sprite3D" type="Sprite3D" parent="MeshInstance3D"]
+transform = Transform3D(-0.0312567, 0, 0.177265, 0, 0.18, 0, -0.177265, 0, -0.0312567, 0.640529, 0, 0)
+texture = SubResource("ViewportTexture_64aec")

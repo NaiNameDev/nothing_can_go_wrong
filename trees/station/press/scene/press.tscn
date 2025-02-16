@@ -1,0 +1,57 @@
+[gd_scene load_steps=10 format=3 uid="uid://crya2h02hym21"]
+
+[ext_resource type="Script" path="res://trees/station/press/script/press.gd" id="1_r2nep"]
+[ext_resource type="Script" path="res://trees/resource/pickable/script/pickable.gd" id="2_uunok"]
+[ext_resource type="Resource" uid="uid://coq38dceryqj1" path="res://trees/resource/pickable/resource/repair_kit.tres" id="3_a8b47"]
+[ext_resource type="Resource" uid="uid://daey2gmvm6yrm" path="res://trees/resource/pickable/resource/oil.tres" id="3_nlcp5"]
+[ext_resource type="Resource" uid="uid://cei8ljy6xmdwy" path="res://trees/resource/pickable/resource/metal.tres" id="3_nnwgb"]
+[ext_resource type="PackedScene" uid="uid://1mtvpwab4yhs" path="res://trees/station/add_area/scene/add_area.tscn" id="6_4sks4"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_oi8oh"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_jtgwu"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_7c7xr"]
+
+[node name="press" type="Node3D" node_paths=PackedStringArray("infoer")]
+script = ExtResource("1_r2nep")
+station_name = "press"
+out = 0.1
+first_res_name = "oil"
+second_res_name = "metal"
+first_res_per_second = 0.02
+allowed_loot_to_add = Array[ExtResource("2_uunok")]([ExtResource("3_nlcp5"), ExtResource("3_nnwgb"), ExtResource("3_a8b47")])
+infoer = NodePath("info")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+transform = Transform3D(2.4, 0, 0, 0, 2.4, 0, 0, 0, 2.4, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+shape = SubResource("BoxShape3D_oi8oh")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D"]
+mesh = SubResource("BoxMesh_jtgwu")
+
+[node name="info" type="Node3D" parent="."]
+
+[node name="Label3D" type="Label3D" parent="info"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.000812709, 0.737568, 1.25435)
+text = "asdasdsd"
+
+[node name="Label3D2" type="Label3D" parent="info"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.000812709, 0.277901, 1.25435)
+text = "asdasdsd"
+
+[node name="Label3D3" type="Label3D" parent="info"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.000812709, -0.22396, 1.25435)
+text = "asdasdsd"
+
+[node name="Label3D4" type="Label3D" parent="info"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.000812709, -0.22396, 1.25435)
+text = "asdasdsd"
+
+[node name="add_area" parent="." instance=ExtResource("6_4sks4")]
+transform = Transform3D(3.30492, 0, 0, 0, 3.30492, 0, 0, 0, 3.30492, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="add_area"]
+shape = SubResource("BoxShape3D_7c7xr")

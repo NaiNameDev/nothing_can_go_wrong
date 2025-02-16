@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Pickable" load_steps=3 format=3 uid="uid://biih5ru3v1i5o"]
+
+[ext_resource type="PackedScene" uid="uid://ip5e8m65mmey" path="res://trees/resource/pickable/media/model_placeholder.tscn" id="1_66g67"]
+[ext_resource type="Script" path="res://trees/resource/pickable/script/pickable.gd" id="1_qebfu"]
+
+[resource]
+script = ExtResource("1_qebfu")
+name = "workpieces"
+model = ExtResource("1_66g67")
+adding = 0.5

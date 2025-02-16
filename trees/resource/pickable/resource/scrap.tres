@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Pickable" load_steps=3 format=3 uid="uid://can83e4v56vor"]
+
+[ext_resource type="Script" path="res://trees/resource/pickable/script/pickable.gd" id="1_f75sr"]
+[ext_resource type="PackedScene" uid="uid://ip5e8m65mmey" path="res://trees/resource/pickable/media/model_placeholder.tscn" id="1_gtohb"]
+
+[resource]
+script = ExtResource("1_f75sr")
+name = "bag of scrap"
+model = ExtResource("1_gtohb")
+adding = 0.5
