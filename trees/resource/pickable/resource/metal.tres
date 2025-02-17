@@ -1,10 +1,10 @@
 [gd_resource type="Resource" script_class="Pickable" load_steps=3 format=3 uid="uid://cei8ljy6xmdwy"]
 
-[ext_resource type="PackedScene" uid="uid://ip5e8m65mmey" path="res://trees/resource/pickable/media/model_placeholder.tscn" id="1_31tys"]
+[ext_resource type="PackedScene" uid="uid://bfghn23s1o2ig" path="res://trees/resource/pickable/media/metal.glb" id="1_qtksf"]
 [ext_resource type="Script" path="res://trees/resource/pickable/script/pickable.gd" id="1_xdc7f"]
 
 [resource]
 script = ExtResource("1_xdc7f")
-name = "beg of metal"
-model = ExtResource("1_31tys")
+name = "metal"
+model = ExtResource("1_qtksf")
 adding = 0.5

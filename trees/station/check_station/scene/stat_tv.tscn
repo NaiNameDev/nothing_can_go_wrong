@@ -1,0 +1,119 @@
+[gd_scene load_steps=3 format=3 uid="uid://cwkvu3tj5yp8g"]
+
+[ext_resource type="Script" path="res://trees/station/check_station/script/stat_tv.gd" id="1_las7k"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_e3b3y"]
+
+[node name="stat_tv" type="MeshInstance3D" node_paths=PackedStringArray("frg", "prs", "hnd")]
+transform = Transform3D(0.2, 0, 0, 0, 2.52, 0, 0, 0, 4.818, 0, 0, 0)
+mesh = SubResource("BoxMesh_e3b3y")
+script = ExtResource("1_las7k")
+frg = NodePath("foges")
+prs = NodePath("presses")
+hnd = NodePath("handles")
+
+[node name="foges" type="Label3D" parent="."]
+transform = Transform3D(-7.60578e-09, 0, 0.29, 0, 0.29, 0, -0.174, 0, -1.26763e-08, 0.662977, 0.391507, 0.358895)
+text = "forges
+"
+font_size = 48
+
+[node name="Label3D4" type="Label3D" parent="foges"]
+transform = Transform3D(1, 0, -3.55271e-14, 0, 1, 0, 1.77636e-15, 0, 1, -0.0178931, -0.592499, 0)
+text = "forges
+"
+font_size = 48
+
+[node name="Label3D5" type="Label3D" parent="foges"]
+transform = Transform3D(1, 0, -3.55271e-14, 0, 1, 0, 1.77636e-15, 0, 1, -0.0178931, -0.919407, 0)
+text = "forges
+"
+font_size = 48
+
+[node name="Label3D6" type="Label3D" parent="foges"]
+transform = Transform3D(1, 0, -4.26326e-14, 0, 1, 0, 1.77636e-15, 0, 1, -0.0178931, -1.25124, 0)
+text = "forges
+"
+font_size = 48
+
+[node name="Label3D7" type="Label3D" parent="foges"]
+transform = Transform3D(1, 0, -4.9738e-14, 0, 1, 0, 1.77636e-15, 0, 1, -0.0178931, -1.5735, 0)
+text = "forges
+"
+font_size = 48
+
+[node name="Label3D8" type="Label3D" parent="foges"]
+transform = Transform3D(1, 0, -5.68434e-14, 0, 1, 0, 1.77636e-15, 0, 1, -0.0178931, -1.88757, 0)
+text = "forges
+"
+font_size = 48
+
+[node name="presses" type="Label3D" parent="."]
+transform = Transform3D(-7.60578e-09, 0, 0.29, 0, 0.29, 0, -0.174, 0, -1.26763e-08, 0.662977, 0.391507, 0.00958598)
+text = "presses"
+font_size = 48
+
+[node name="Label3D4" type="Label3D" parent="presses"]
+transform = Transform3D(1, 0, -3.55271e-14, 0, 1, 0, 1.77636e-15, 0, 1, -0.0178931, -0.592499, 0)
+text = "forges
+"
+font_size = 48
+
+[node name="Label3D5" type="Label3D" parent="presses"]
+transform = Transform3D(1, 0, -3.55271e-14, 0, 1, 0, 1.77636e-15, 0, 1, -0.0178931, -0.919407, 0)
+text = "forges
+"
+font_size = 48
+
+[node name="Label3D6" type="Label3D" parent="presses"]
+transform = Transform3D(1, 0, -4.26326e-14, 0, 1, 0, 1.77636e-15, 0, 1, -0.0178931, -1.25124, 0)
+text = "forges
+"
+font_size = 48
+
+[node name="Label3D7" type="Label3D" parent="presses"]
+transform = Transform3D(1, 0, -4.9738e-14, 0, 1, 0, 1.77636e-15, 0, 1, -0.0178931, -1.5735, 0)
+text = "forges
+"
+font_size = 48
+
+[node name="Label3D8" type="Label3D" parent="presses"]
+transform = Transform3D(1, 0, -5.68434e-14, 0, 1, 0, 1.77636e-15, 0, 1, -0.0178931, -1.88757, 0)
+text = "forges
+"
+font_size = 48
+
+[node name="handles" type="Label3D" parent="."]
+transform = Transform3D(-7.60578e-09, 0, 0.29, 0, 0.29, 0, -0.174, 0, -1.26763e-08, 0.662977, 0.391507, -0.357401)
+text = "handlers"
+font_size = 48
+
+[node name="Label3D4" type="Label3D" parent="handles"]
+transform = Transform3D(1, 0, -3.55271e-14, 0, 1, 0, 1.77636e-15, 0, 1, -0.0178931, -0.592499, 0)
+text = "forges
+"
+font_size = 48
+
+[node name="Label3D5" type="Label3D" parent="handles"]
+transform = Transform3D(1, 0, -3.55271e-14, 0, 1, 0, 1.77636e-15, 0, 1, -0.0178931, -0.919407, 0)
+text = "forges
+"
+font_size = 48
+
+[node name="Label3D6" type="Label3D" parent="handles"]
+transform = Transform3D(1, 0, -4.26326e-14, 0, 1, 0, 1.77636e-15, 0, 1, -0.0178931, -1.25124, 0)
+text = "forges
+"
+font_size = 48
+
+[node name="Label3D7" type="Label3D" parent="handles"]
+transform = Transform3D(1, 0, -4.9738e-14, 0, 1, 0, 1.77636e-15, 0, 1, -0.0178931, -1.5735, 0)
+text = "forges
+"
+font_size = 48
+
+[node name="Label3D8" type="Label3D" parent="handles"]
+transform = Transform3D(1, 0, -5.68434e-14, 0, 1, 0, 1.77636e-15, 0, 1, -0.0178931, -1.88757, 0)
+text = "forges
+"
+font_size = 48

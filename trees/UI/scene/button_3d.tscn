@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://d2pdbqc2gxewh"]
+
+[ext_resource type="Script" path="res://trees/UI/script/button_3d.gd" id="1_c8n0f"]
+
+[node name="Button3D" type="CharacterBody3D" groups=["button"]]
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("1_c8n0f")

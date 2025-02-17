@@ -1,0 +1,79 @@
+[gd_scene load_steps=7 format=3 uid="uid://bo7jlf7q23ofy"]
+
+[ext_resource type="Script" path="res://trees/station/check_station/script/info_panel.gd" id="1_6v2tb"]
+[ext_resource type="PackedScene" uid="uid://d2pdbqc2gxewh" path="res://trees/UI/scene/button_3d.tscn" id="1_v2xxt"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_a4vd4"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_dp6vq"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hyxpo"]
+albedo_color = Color(1, 0, 0, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_6b7fk"]
+material = SubResource("StandardMaterial3D_hyxpo")
+
+[node name="shop" type="Node3D" node_paths=PackedStringArray("dropper")]
+transform = Transform3D(1.13302, 0, 0, 0, 1.88837, 0, 0, 0, 0.944184, 0, 0, 0)
+script = ExtResource("1_6v2tb")
+dropper = NodePath("MeshInstance3D2")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1.728, 0, 0, 0, 0.98, 0, 0, 0, 0.2, 0, 0, 0)
+mesh = SubResource("BoxMesh_a4vd4")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1.728, 0, 0, 0, 0.98, 0, 0, 0, 1.75997, 2.01901, 1.08566, 0.931777)
+mesh = SubResource("BoxMesh_a4vd4")
+
+[node name="Button3D" parent="." instance=ExtResource("1_v2xxt")]
+transform = Transform3D(0.366385, 0, 0, 0, 0.0873801, 0, 0, 0, 0.154173, -0.581907, 0.405176, 0.0414297)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Button3D"]
+shape = SubResource("BoxShape3D_dp6vq")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Button3D"]
+mesh = SubResource("BoxMesh_6b7fk")
+
+[node name="Label3D" type="Label3D" parent="Button3D"]
+transform = Transform3D(1.18457, 0, 0, 0, 2.96143, 0, 0, 0, 2.96143, 0, 0, 0.542996)
+text = "buy coal"
+
+[node name="Button3D2" parent="." instance=ExtResource("1_v2xxt")]
+transform = Transform3D(0.366385, 0, 0, 0, 0.0873801, 0, 0, 0, 0.154173, -0.581907, 0.26404, 0.0414297)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Button3D2"]
+shape = SubResource("BoxShape3D_dp6vq")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Button3D2"]
+mesh = SubResource("BoxMesh_6b7fk")
+
+[node name="Label3D" type="Label3D" parent="Button3D2"]
+transform = Transform3D(1.18457, 0, 0, 0, 2.96143, 0, 0, 0, 2.96143, 0, 0, 0.542996)
+text = "buy scrap"
+
+[node name="Button3D3" parent="." instance=ExtResource("1_v2xxt")]
+transform = Transform3D(0.366385, 0, 0, 0, 0.0873801, 0, 0, 0, 0.154173, -0.581907, 0.123097, 0.0414297)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Button3D3"]
+shape = SubResource("BoxShape3D_dp6vq")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Button3D3"]
+mesh = SubResource("BoxMesh_6b7fk")
+
+[node name="Label3D" type="Label3D" parent="Button3D3"]
+transform = Transform3D(1.18457, 0, 0, 0, 2.96143, 0, 0, 0, 2.96143, 0, 0, 0.542996)
+text = "buy oil"
+
+[node name="Button3D4" parent="." instance=ExtResource("1_v2xxt")]
+transform = Transform3D(0.366385, 0, 0, 0, 0.0873801, 0, 0, 0, 0.154173, -0.581907, -0.0205332, 0.0414297)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Button3D4"]
+shape = SubResource("BoxShape3D_dp6vq")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Button3D4"]
+mesh = SubResource("BoxMesh_6b7fk")
+
+[node name="Label3D" type="Label3D" parent="Button3D4"]
+transform = Transform3D(1.18457, 0, 0, 0, 2.96143, 0, 0, 0, 2.96143, 0, 0, 0.542996)
+text = "buy rep_kit"

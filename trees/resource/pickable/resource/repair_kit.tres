@@ -7,4 +7,4 @@
 script = ExtResource("1_b1ht1")
 name = "repair kit"
 model = ExtResource("1_465t1")
-adding = 0.5
+adding = 0.3

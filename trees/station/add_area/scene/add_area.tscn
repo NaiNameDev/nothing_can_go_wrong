@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://trees/station/add_area/script/add_area.gd" id="1_fij5c"]
 
-[node name="add_area" type="CharacterBody3D"]
+[node name="add_area" type="CharacterBody3D" groups=["add_button"]]
 collision_layer = 2
 collision_mask = 2
 script = ExtResource("1_fij5c")

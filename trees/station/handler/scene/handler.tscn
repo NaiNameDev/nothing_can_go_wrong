@@ -1,6 +1,7 @@
-[gd_scene load_steps=10 format=3 uid="uid://cq502mwuo50uu"]
+[gd_scene load_steps=11 format=3 uid="uid://cq502mwuo50uu"]
 
 [ext_resource type="Script" path="res://trees/station/handler/script/handler.gd" id="1_knxhl"]
+[ext_resource type="Resource" uid="uid://b766kg3eudqqf" path="res://trees/resource/pickable/resource/box_of_bolts.tres" id="2_k2x0p"]
 [ext_resource type="Script" path="res://trees/resource/pickable/script/pickable.gd" id="2_krmpm"]
 [ext_resource type="Resource" uid="uid://cnd4p18w1ejvx" path="res://trees/resource/pickable/resource/box.tres" id="3_dnweq"]
 [ext_resource type="Resource" uid="uid://coq38dceryqj1" path="res://trees/resource/pickable/resource/repair_kit.tres" id="3_g1kg3"]
@@ -13,11 +14,13 @@
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_r4sks"]
 
-[node name="handler" type="Node3D" node_paths=PackedStringArray("infoer")]
+[node name="handler" type="Node3D" node_paths=PackedStringArray("drop_place", "infoer")]
 script = ExtResource("1_knxhl")
 station_name = "handler"
 first_res_name = "workpiece"
 second_res_name = "box"
+out = ExtResource("2_k2x0p")
+drop_place = NodePath("drop_point")
 allowed_loot_to_add = Array[ExtResource("2_krmpm")]([ExtResource("3_plln2"), ExtResource("3_dnweq"), ExtResource("3_g1kg3")])
 infoer = NodePath("info")
 
@@ -45,7 +48,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.000812709, -0.22396, 1.254
 text = "asdasdsd"
 
 [node name="Label3D4" type="Label3D" parent="info"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.000812709, -0.22396, 1.25435)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.000812709, 0.978139, 1.25435)
 text = "asdasdsd"
 
 [node name="add_area" parent="." instance=ExtResource("6_m5cs1")]
@@ -53,3 +56,6 @@ transform = Transform3D(3.30492, 0, 0, 0, 3.30492, 0, 0, 0, 3.30492, 0, 0, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="add_area"]
 shape = SubResource("BoxShape3D_r4sks")
+
+[node name="drop_point" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.45834)

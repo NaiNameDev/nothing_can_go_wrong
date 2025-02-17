@@ -1,10 +1,12 @@
-[gd_scene load_steps=9 format=3 uid="uid://bvpxhlsms5xxw"]
+[gd_scene load_steps=11 format=3 uid="uid://bvpxhlsms5xxw"]
 
 [ext_resource type="PackedScene" uid="uid://dwwd5pfn33hqv" path="res://trees/entity/player/scene/player.tscn" id="1_1pbaj"]
 [ext_resource type="PackedScene" uid="uid://bhdj1atqlqbn4" path="res://trees/station/forge/scene/forge.tscn" id="2_4y5c6"]
 [ext_resource type="PackedScene" uid="uid://crya2h02hym21" path="res://trees/station/press/scene/press.tscn" id="3_6oc6c"]
 [ext_resource type="PackedScene" uid="uid://cq502mwuo50uu" path="res://trees/station/handler/scene/handler.tscn" id="4_fpe2i"]
 [ext_resource type="PackedScene" uid="uid://cwj8jnd31c3fi" path="res://trees/station/check_station/scene/tv.tscn" id="6_lr3u5"]
+[ext_resource type="PackedScene" uid="uid://cwkvu3tj5yp8g" path="res://trees/station/check_station/scene/stat_tv.tscn" id="6_wdkix"]
+[ext_resource type="PackedScene" uid="uid://bo7jlf7q23ofy" path="res://trees/station/check_station/scene/shop.tscn" id="8_gedbj"]
 
 [sub_resource type="Environment" id="Environment_temil"]
 
@@ -28,6 +30,8 @@ transform = Transform3D(0.866025, -0.381836, 0.322802, 0, 0.645604, 0.763672, -0
 
 [node name="StaticBody3D" type="StaticBody3D" parent="testi"]
 transform = Transform3D(22.5, 0, 0, 0, 1, 0, 0, 0, 25.38, -11.9283, 0, 0)
+collision_layer = 5
+collision_mask = 5
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="testi/StaticBody3D"]
 mesh = SubResource("BoxMesh_ia0tx")
@@ -37,6 +41,8 @@ shape = SubResource("BoxShape3D_oifaf")
 
 [node name="StaticBody3D2" type="StaticBody3D" parent="testi"]
 transform = Transform3D(22.5, 0, 0, 0, 1, 0, 0, 0, 25.38, -7.11496, -6.78369, 0)
+collision_layer = 5
+collision_mask = 5
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="testi/StaticBody3D2"]
 mesh = SubResource("BoxMesh_ia0tx")
@@ -46,6 +52,8 @@ shape = SubResource("BoxShape3D_oifaf")
 
 [node name="StaticBody3D3" type="StaticBody3D" parent="testi"]
 transform = Transform3D(22.5, 0, 0, 0, 1, 0, 0, 0, 25.38, -1.11496, -14.7837, 0)
+collision_layer = 5
+collision_mask = 5
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="testi/StaticBody3D3"]
 mesh = SubResource("BoxMesh_ia0tx")
@@ -55,6 +63,8 @@ shape = SubResource("BoxShape3D_oifaf")
 
 [node name="StaticBody3D4" type="StaticBody3D" parent="testi"]
 transform = Transform3D(4.5, 0, 0, 0, 1.32886, -8.5622, 0, 0.866436, 13.1319, 0.885044, -3.78369, -5)
+collision_layer = 5
+collision_mask = 5
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="testi/StaticBody3D4"]
 mesh = SubResource("BoxMesh_ia0tx")
@@ -64,6 +74,8 @@ shape = SubResource("BoxShape3D_oifaf")
 
 [node name="StaticBody3D5" type="StaticBody3D" parent="testi"]
 transform = Transform3D(4.5, 0, 0, 0, 1.32886, -8.5622, 0, 0.866436, 13.1319, 5.88504, -10.7837, 5)
+collision_layer = 5
+collision_mask = 5
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="testi/StaticBody3D5"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 3.72529e-09, 1, -0.222222, 0.344292, 0.0534343)
@@ -75,57 +87,25 @@ shape = SubResource("BoxShape3D_oifaf")
 [node name="forge" type="Node3D" parent="testi"]
 
 [node name="forge" parent="testi/forge" instance=ExtResource("2_4y5c6")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -8, 2, 10)
-
-[node name="forge2" parent="testi/forge" instance=ExtResource("2_4y5c6")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -8, 2, 6)
-station_id = 1
-
-[node name="forge3" parent="testi/forge" instance=ExtResource("2_4y5c6")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -8, 2, 2)
-station_id = 2
-
-[node name="forge4" parent="testi/forge" instance=ExtResource("2_4y5c6")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -8, 2, -2)
-station_id = 3
-
-[node name="forge5" parent="testi/forge" instance=ExtResource("2_4y5c6")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -8, 2, -6)
-station_id = 4
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -10.7782, 2.33214, -3.58049)
+out_per_second = 1.0
 
 [node name="press" type="Node3D" parent="testi"]
 
 [node name="press2" parent="testi/press" instance=ExtResource("3_6oc6c")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -8, -5, 11)
-
-[node name="press3" parent="testi/press" instance=ExtResource("3_6oc6c")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -8, -5, 7)
-
-[node name="press4" parent="testi/press" instance=ExtResource("3_6oc6c")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -8, -5, 3)
-
-[node name="press5" parent="testi/press" instance=ExtResource("3_6oc6c")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -8, -5, -1)
-
-[node name="press6" parent="testi/press" instance=ExtResource("3_6oc6c")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -8, -5, -5)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -9.6873, 2.14103, 2.56878)
+out_per_second = 3.0
 
 [node name="handler" type="Node3D" parent="testi"]
 
 [node name="handler2" parent="testi/handler" instance=ExtResource("4_fpe2i")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -8, -13, 11)
-
-[node name="handler3" parent="testi/handler" instance=ExtResource("4_fpe2i")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -8, -13, 7)
-
-[node name="handler4" parent="testi/handler" instance=ExtResource("4_fpe2i")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -8, -13, 3)
-
-[node name="handler5" parent="testi/handler" instance=ExtResource("4_fpe2i")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -8, -13, -1)
-
-[node name="handler6" parent="testi/handler" instance=ExtResource("4_fpe2i")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -8, -13, -5)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -9.7681, 1.66879, 9.741)
 
 [node name="tv" parent="." instance=ExtResource("6_lr3u5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 2, 0)
+
+[node name="stat_tv" parent="." instance=ExtResource("6_wdkix")]
+transform = Transform3D(0.2, 0, 0, 0, 2.52, 0, 0, 0, 4.818, -5, 1.92772, 5)
+
+[node name="shop" parent="." instance=ExtResource("8_gedbj")]
+transform = Transform3D(-4.95259e-08, 0, 0.944184, 0, 1.88837, 0, -1.13302, 0, -4.12716e-08, -4.36211, 1.35872, -3.74892)

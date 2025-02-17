@@ -7,4 +7,4 @@
 script = ExtResource("1_vshis")
 name = "box of boxes"
 model = ExtResource("1_mmneh")
-adding = 0.5
+adding = 0.7

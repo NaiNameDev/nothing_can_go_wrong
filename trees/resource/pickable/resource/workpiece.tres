@@ -7,4 +7,4 @@
 script = ExtResource("1_qebfu")
 name = "workpieces"
 model = ExtResource("1_66g67")
-adding = 0.5
+adding = 0.4

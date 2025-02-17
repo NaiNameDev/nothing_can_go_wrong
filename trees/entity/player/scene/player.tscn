@@ -2,14 +2,15 @@
 
 [ext_resource type="Script" path="res://trees/entity/player/script/player.gd" id="1_1v7up"]
 [ext_resource type="Script" path="res://trees/entity/player/script/camera.gd" id="1_w6nco"]
-[ext_resource type="Resource" uid="uid://c6wl35k6gbk1n" path="res://trees/resource/pickable/resource/coal.tres" id="2_hqpfo"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ofvoh"]
 
-[node name="Player" type="CharacterBody3D" node_paths=PackedStringArray("camera", "action_ray", "throw_target")]
+[sub_resource type="CanvasTexture" id="CanvasTexture_ve07r"]
+
+[node name="Player" type="CharacterBody3D" node_paths=PackedStringArray("camera", "place_for_hand", "action_ray", "throw_target")]
 script = ExtResource("1_1v7up")
 camera = NodePath("Camera3D")
-hand_buffer = ExtResource("2_hqpfo")
+place_for_hand = NodePath("Camera3D/place")
 action_ray = NodePath("Camera3D/RayCast3D")
 throw_target = NodePath("Camera3D/Node3D")
 
@@ -25,5 +26,27 @@ collision_mask = 2
 [node name="Node3D" type="Node3D" parent="Camera3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2)
 
+[node name="place" type="Node3D" parent="Camera3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.182156, -0.327432, -0.546148)
+
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("CapsuleShape3D_ofvoh")
+
+[node name="debug_canvas" type="CanvasLayer" parent="."]
+
+[node name="Label" type="Label" parent="debug_canvas"]
+offset_left = 583.0
+offset_top = 623.0
+offset_right = 623.0
+offset_bottom = 646.0
+
+[node name="Sprite2D" type="Sprite2D" parent="debug_canvas"]
+position = Vector2(180, 120)
+scale = Vector2(0.999997, 1.00001)
+texture = SubResource("CanvasTexture_ve07r")
+
+[node name="Sprite2D2" type="Sprite2D" parent="debug_canvas"]
+visible = false
+position = Vector2(180, 120)
+scale = Vector2(3, 3.429)
+texture = SubResource("CanvasTexture_ve07r")
