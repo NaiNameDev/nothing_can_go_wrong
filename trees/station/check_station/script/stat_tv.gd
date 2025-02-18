@@ -6,6 +6,13 @@ extends MeshInstance3D
 
 func _ready() -> void:
 	EventBus.connect("update_info", update_info)
+	EventBus.connect("enable_disable_system", on_off)
+
+func on_off(v: bool):
+	if v:
+		$text.visible = true
+	else:
+		$text.visible = false
 
 func update_info(type: String, id: int, res1: float, res2: float, res3: float, works: bool):
 	match type:

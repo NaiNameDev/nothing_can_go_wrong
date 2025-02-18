@@ -2,20 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://iokoeafd34bc"
-path.s3tc="res://.godot/imported/kill_me_bag_of_coal_coal.png-881371fd791a0e48131318d3963d8ad7.s3tc.ctex"
+uid="uid://dg6nuwh0omuas"
+path.s3tc="res://.godot/imported/stairs_btn_pls_blue_btn.png-75dea4c18e7567a4a395eef37fda9035.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "3ce62327d77f894283d9139f3c914132"
+"md5": "f357a04f9ddb58adc6c1a86a43f53632"
 }
 
 [deps]
 
-source_file="res://trees/resource/pickable/media/kill_me_bag_of_coal_coal.png"
-dest_files=["res://.godot/imported/kill_me_bag_of_coal_coal.png-881371fd791a0e48131318d3963d8ad7.s3tc.ctex"]
+source_file="res://trees/level/level/media/glb/stairs_btn_pls_blue_btn.png"
+dest_files=["res://.godot/imported/stairs_btn_pls_blue_btn.png-75dea4c18e7567a4a395eef37fda9035.s3tc.ctex"]
 
 [params]
 

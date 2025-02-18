@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://bfghn23s1o2ig"
-path="res://.godot/imported/metal.glb-61fa5cb42a239d32a779994537955dc5.scn"
+uid="uid://c701vtaf0got8"
+path="res://.godot/imported/red_light.glb-f9428653e3d79211803f5a2ad9d76f9d.scn"
 
 [deps]
 
-source_file="res://trees/resource/pickable/media/metal.glb"
-dest_files=["res://.godot/imported/metal.glb-61fa5cb42a239d32a779994537955dc5.scn"]
+source_file="res://trees/level/level/media/glb/red_light.glb"
+dest_files=["res://.godot/imported/red_light.glb-f9428653e3d79211803f5a2ad9d76f9d.scn"]
 
 [params]
 

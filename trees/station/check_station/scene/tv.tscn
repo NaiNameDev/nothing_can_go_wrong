@@ -1,35 +1,85 @@
-[gd_scene load_steps=5 format=3 uid="uid://cwj8jnd31c3fi"]
+[gd_scene load_steps=9 format=4 uid="uid://cwj8jnd31c3fi"]
 
 [ext_resource type="Script" path="res://trees/station/check_station/script/tv.gd" id="1_rue8m"]
+[ext_resource type="Texture2D" uid="uid://bax3t1ufiftej" path="res://trees/station/check_station/media/tv_metal.png" id="2_0qefi"]
 
-[sub_resource type="BoxMesh" id="BoxMesh_7vame"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ew417"]
+resource_name = "Material.001"
+cull_mode = 2
+albedo_texture = ExtResource("2_0qefi")
+roughness = 0.5
+texture_filter = 2
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_lnlst"]
+_surfaces = [{
+"aabb": AABB(-1, -1, -1, 2, 2, 2),
+"format": 34896613377,
+"index_count": 36,
+"index_data": PackedByteArray("AAADAAEAAAACAAMAAgAHAAMAAgAGAAcABgAFAAcABgAEAAUABAABAAUABAAAAAEAAgAEAAYAAgAAAAQABwABAAMABwAFAAEA"),
+"name": "Material.001",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 8,
+"vertex_data": PackedByteArray("AAAAAP//AAAAAP////8AAAAAAAAAAAAAAAD//wAAAAD//wAA//8AAP///////wAA//8AAAAAAAD/////AAAAAA==")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_m5g2t"]
+resource_name = "tv_Cube_001"
+_surfaces = [{
+"aabb": AABB(-1, -1, -1, 2, 2, 2),
+"attribute_data": PackedByteArray("IkCrKpGneST/VapK3HOrKqxw/w//lapKhkyQTpGnE5//VaoKeJ+QTqxw/0//laoKIkCMQzDMeSQ2F1Nd3HOMQ45d/w/IqlNdhkyLODDME582F+TweJ+LOI5d/0/IquTw"),
+"format": 34896613399,
+"index_count": 36,
+"index_data": PackedByteArray("AgALAAUAAgAIAAsABgAVAAkABgASABUAFAARABcAFAAOABEADAADAA8ADAAAAAMABwANABMABwABAA0AFgAEAAoAFgAQAAQA"),
+"material": SubResource("StandardMaterial3D_ew417"),
+"name": "Material.001",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 24,
+"vertex_data": PackedByteArray("AAAAAP///78AAAAA////vwAAAAD//1TVAAD//////78AAP///////wAA/////1TVAAAAAAAA//8AAAAAAAD/vwAAAAAAAFTVAAD//wAA//8AAP//AAD//wAA//8AAFTV//8AAP///7///wAA////v///AAD//1TV/////////7///////////////////1TV//8AAAAA/////wAAAAD/v///AAAAAFTV/////wAA////////AAD///////8AAFTV/////wAA/39U1VTV//////9//79U1VTV/7//vwAA/39U1VTV/7//v/9//79U1VTV/////wAA/3+qKqoq//////9//7+qKqoq/7//vwAA/3+qKqoq/7//v/9//7+qKqoq")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_lnlst")
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_rhnwy"]
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_64aec"]
-viewport_path = NodePath("MeshInstance3D/SubViewport")
+viewport_path = NodePath("tv/Cube/SubViewport")
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_wws1j"]
+data = PackedVector3Array(-1, -1, 1, -1, 1, -1, -1, 1, 1, -1, -1, 1, -1, -1, -1, -1, 1, -1, -1, -1, -1, 1, 1, -1, -1, 1, -1, -1, -1, -1, 1, -1, -1, 1, 1, -1, 1, -1, -1, 1, 1, 1, 1, 1, -1, 1, -1, -1, 1, -1, 1, 1, 1, 1, 1, -1, 1, -1, 1, 1, 1, 1, 1, 1, -1, 1, -1, -1, 1, -1, 1, 1, -1, -1, -1, 1, -1, 1, 1, -1, -1, -1, -1, -1, -1, -1, 1, 1, -1, 1, 1, 1, -1, -1, 1, 1, -1, 1, -1, 1, 1, -1, 1, 1, 1, -1, 1, 1)
 
 [node name="tv" type="Node3D" node_paths=PackedStringArray("grid")]
 script = ExtResource("1_rue8m")
-grid = NodePath("MeshInstance3D/SubViewport/GridContainer")
+grid = NodePath("tv/Cube/SubViewport/GridContainer")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.2, 0, 0, 0, 2.7, 0, 0, 0, 4.9, 0, 0, 0)
-mesh = SubResource("BoxMesh_7vame")
+[node name="tv" type="Node3D" parent="."]
+transform = Transform3D(2.27565, 0, 0, 0, 2.27565, 0, 0, 0, 2.27565, 0.0385007, 0, 0.0796416)
 
-[node name="SubViewport" type="SubViewport" parent="MeshInstance3D"]
+[node name="Cube" type="MeshInstance3D" parent="tv"]
+transform = Transform3D(0.1, 0, 0, 0, 0.6, 0, 0, 0, 1, 0, 0, 0)
+mesh = SubResource("ArrayMesh_m5g2t")
+skeleton = NodePath("")
+
+[node name="SubViewport" type="SubViewport" parent="tv/Cube"]
 disable_3d = true
 
-[node name="GridContainer" type="GridContainer" parent="MeshInstance3D/SubViewport"]
+[node name="GridContainer" type="GridContainer" parent="tv/Cube/SubViewport"]
 offset_right = 512.0
 offset_bottom = 512.0
 
-[node name="Sprite2D" type="Sprite2D" parent="MeshInstance3D/SubViewport/GridContainer"]
+[node name="Sprite2D" type="Sprite2D" parent="tv/Cube/SubViewport/GridContainer"]
 modulate = Color(0, 0, 0, 1)
 position = Vector2(579.75, 323.75)
 scale = Vector2(1160.5, 648.5)
 texture = SubResource("CanvasTexture_rhnwy")
 
-[node name="Sprite3D" type="Sprite3D" parent="MeshInstance3D"]
-transform = Transform3D(-0.0312567, 0, 0.177265, 0, 0.18, 0, -0.177265, 0, -0.0312567, 0.640529, 0, 0)
+[node name="Sprite3D" type="Sprite3D" parent="tv/Cube"]
+transform = Transform3D(-1.55769e-08, 0, 0.169709, 0, 0.344429, 0, -0.356357, 0, -7.41821e-09, 1.00776, 2.61924e-07, -0.00153784)
 texture = SubResource("ViewportTexture_64aec")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="tv/Cube"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="tv/Cube/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_wws1j")

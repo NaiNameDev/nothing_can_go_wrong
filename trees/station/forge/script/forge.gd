@@ -22,7 +22,7 @@ extends Node3D
 			works = false
 			EventBus.forge_break.emit(station_id, "out of " + first_res_name, station_name)
 @export var first_res_max: float = 1.0
-@export var first_res_per_second: float = 0.01
+@export var first_res_per_second: float = 0.005
 
 @export_category("second res")
 @export var second_res_left: float = 0:
@@ -37,7 +37,7 @@ extends Node3D
 			works = false
 			EventBus.forge_break.emit(station_id, "out of " + second_res_name, station_name)
 @export var second_res_max: float = 1.0
-@export var second_res_per_second: float = 0.01
+@export var second_res_per_second: float = 0.005
 
 @export_category("strength res")
 @export var strength_left: float = 1.0:
@@ -59,7 +59,7 @@ extends Node3D
 @export var drop_place: Node3D
 @export var out_now: float = 0.0: set = on_out_set
 @export var out_max: float = 1.0
-@export var out_per_second: float = 0.05
+@export var out_per_second: float = 0.03
 
 @export_category("other")
 @export var allowed_loot_to_add: Array[Pickable]
@@ -68,12 +68,24 @@ extends Node3D
 @onready var light: Node3D = $forge/Cube_001
 @onready var des_light: Node3D = $forge/Cube_002
 
+@onready var light_light: Node3D = $OmniLight3D
+
+var electrocity: bool = true
+
 func _ready() -> void:
 	add_area.connect("on_press", add_loot)
 	
 	EventBus.gl_event_timer.connect("timeout", tick)
 	infoer.get_child(3).text = station_name + " id " + str(station_id)
 	update_info()
+	
+	EventBus.connect("enable_disable_system", on_off)
+
+func on_off(v: bool):
+	if v:
+		electrocity = true
+	else:
+		electrocity = false
 
 func on_out_set(v):
 	out_now = v
@@ -89,7 +101,8 @@ func update_info():
 	EventBus.update_info.emit(station_name, station_id, first_res_left, second_res_left, strength_left, works)
 
 func tick():
-	if works:
+	if works and electrocity:
+		light_light.visible = true
 		light.visible = true
 		des_light.visible = false
 		first_res_left -= first_res_per_second
@@ -99,6 +112,7 @@ func tick():
 		
 		update_info()
 	else:
+		light_light.visible = false
 		des_light.visible = true
 		light.visible = false
 

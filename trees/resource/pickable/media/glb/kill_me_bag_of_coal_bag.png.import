@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dsoms0toyaoat"
-path.s3tc="res://.godot/imported/kill_me_bag_of_coal_bag.png-77e88f516c8b6c23ed29843a431fe523.s3tc.ctex"
+path.s3tc="res://.godot/imported/kill_me_bag_of_coal_bag.png-900d1c160143aa923e459104eba0cc99.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -14,8 +14,8 @@ generator_parameters={
 
 [deps]
 
-source_file="res://trees/resource/pickable/media/kill_me_bag_of_coal_bag.png"
-dest_files=["res://.godot/imported/kill_me_bag_of_coal_bag.png-77e88f516c8b6c23ed29843a431fe523.s3tc.ctex"]
+source_file="res://trees/resource/pickable/media/glb/kill_me_bag_of_coal_bag.png"
+dest_files=["res://.godot/imported/kill_me_bag_of_coal_bag.png-900d1c160143aa923e459104eba0cc99.s3tc.ctex"]
 
 [params]
 

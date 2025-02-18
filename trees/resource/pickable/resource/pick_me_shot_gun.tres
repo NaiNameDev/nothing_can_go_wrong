@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Pickable" load_steps=3 format=3 uid="uid://cwi1nwdy3e5cl"]
+
+[ext_resource type="PackedScene" uid="uid://da4cgfk11hqu0" path="res://trees/resource/pickable/media/fixed_shot_gun.tscn" id="1_8r38l"]
+[ext_resource type="Script" path="res://trees/resource/pickable/script/pickable.gd" id="1_agbpm"]
+
+[resource]
+script = ExtResource("1_agbpm")
+name = ""
+model = ExtResource("1_8r38l")
+adding = 0.5

@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://q7mngkx8eb64"]
+
+[ext_resource type="PackedScene" uid="uid://dd5e0wvauvorh" path="res://trees/resource/pickable/media/glb/bolt_box.glb" id="1_ekaqb"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ilf71"]
+
+[node name="bolt_box_fixed" type="CollisionShape3D"]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
+shape = SubResource("BoxShape3D_ilf71")
+
+[node name="bolt_box" parent="." instance=ExtResource("1_ekaqb")]

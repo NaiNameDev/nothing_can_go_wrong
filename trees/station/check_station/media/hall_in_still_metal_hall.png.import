@@ -2,20 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bve2ghkr4if7a"
-path.s3tc="res://.godot/imported/metal_metal.png-d8a25852015728a5efd6d5c87c5481a4.s3tc.ctex"
+uid="uid://cfikhp6xebmkw"
+path.s3tc="res://.godot/imported/hall_in_still_metal_hall.png-bd62c377950fca39d863639ff0569a6d.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "574f99cae0a6b756a3308e6703e08957"
+"md5": "0db75697a7f7715de2365ae5450cd1f7"
 }
 
 [deps]
 
-source_file="res://trees/resource/pickable/media/metal_metal.png"
-dest_files=["res://.godot/imported/metal_metal.png-d8a25852015728a5efd6d5c87c5481a4.s3tc.ctex"]
+source_file="res://trees/station/check_station/media/hall_in_still_metal_hall.png"
+dest_files=["res://.godot/imported/hall_in_still_metal_hall.png-bd62c377950fca39d863639ff0569a6d.s3tc.ctex"]
 
 [params]
 

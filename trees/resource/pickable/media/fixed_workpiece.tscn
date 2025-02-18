@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://bm45bqk0tjxb4"]
+
+[ext_resource type="PackedScene" uid="uid://b2wein62hpb0h" path="res://trees/resource/pickable/media/glb/workpiece.glb" id="1_ol22v"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_g2hmx"]
+size = Vector3(0.5, 0.6, 0.5)
+
+[node name="fixed_workpiece" type="CollisionShape3D"]
+shape = SubResource("BoxShape3D_g2hmx")
+
+[node name="workpiece" parent="." instance=ExtResource("1_ol22v")]

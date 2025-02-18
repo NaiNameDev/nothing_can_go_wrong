@@ -1,0 +1,20 @@
+[gd_scene load_steps=6 format=3 uid="uid://bk4j4g0juyp05"]
+
+[ext_resource type="PackedScene" uid="uid://baw3k6c7peiaf" path="res://trees/station/gena/media/gena.glb" id="1_bo4kn"]
+[ext_resource type="Script" path="res://trees/station/gena/script/gena.gd" id="1_j8xh8"]
+[ext_resource type="Resource" uid="uid://coq38dceryqj1" path="res://trees/resource/pickable/resource/repair_kit.tres" id="2_3fhqs"]
+[ext_resource type="PackedScene" uid="uid://1mtvpwab4yhs" path="res://trees/station/add_area/scene/add_area.tscn" id="3_n1kss"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_8owrm"]
+
+[node name="gena" type="Node3D"]
+script = ExtResource("1_j8xh8")
+loot_to_repair = ExtResource("2_3fhqs")
+
+[node name="gena" parent="." instance=ExtResource("1_bo4kn")]
+
+[node name="add_area" parent="." instance=ExtResource("3_n1kss")]
+transform = Transform3D(0.868417, 0, 0, 0, 0.868417, 0, 0, 0, 0.868417, 3.32646, -0.44177, -0.0333726)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="add_area"]
+shape = SubResource("BoxShape3D_8owrm")

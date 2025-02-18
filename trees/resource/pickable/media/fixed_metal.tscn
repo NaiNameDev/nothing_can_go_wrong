@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://mlnqu44gxtn"]
+
+[ext_resource type="PackedScene" uid="uid://bfghn23s1o2ig" path="res://trees/resource/pickable/media/glb/metal.glb" id="1_sf7uv"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_icfxl"]
+size = Vector3(0.3, 0.2, 0.5)
+
+[node name="fixed_metal" type="CollisionShape3D"]
+shape = SubResource("BoxShape3D_icfxl")
+
+[node name="metal" parent="." instance=ExtResource("1_sf7uv")]

@@ -2,20 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d3hi8iji0rtb4"
-path.s3tc="res://.godot/imported/pick_me_oil_metal_oil.png-bac4adb5dac5c8c188e644e4774a043b.s3tc.ctex"
+uid="uid://dvwkebudbypa3"
+path.s3tc="res://.godot/imported/scrap_scrap.png-2e56d297db2892c06c51b70c8acac070.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "07f9782e3d477359d25b198873355c44"
+"md5": "61de4cc6d5ee24dc3f8ffe737ee73f50"
 }
 
 [deps]
 
-source_file="res://trees/resource/pickable/media/pick_me_oil_metal_oil.png"
-dest_files=["res://.godot/imported/pick_me_oil_metal_oil.png-bac4adb5dac5c8c188e644e4774a043b.s3tc.ctex"]
+source_file="res://trees/resource/pickable/media/glb/scrap_scrap.png"
+dest_files=["res://.godot/imported/scrap_scrap.png-2e56d297db2892c06c51b70c8acac070.s3tc.ctex"]
 
 [params]
 

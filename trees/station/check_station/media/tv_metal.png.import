@@ -2,20 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dvwkebudbypa3"
-path.s3tc="res://.godot/imported/scrap_scrap.png-a188b0fa0fb281d3b62d81cf2e364928.s3tc.ctex"
+uid="uid://bax3t1ufiftej"
+path.s3tc="res://.godot/imported/tv_metal.png-1367ecc069f7dbd7ecf3b7a0296c85f7.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "61de4cc6d5ee24dc3f8ffe737ee73f50"
+"md5": "be9744ee484e54559cf199f47d174fca"
 }
 
 [deps]
 
-source_file="res://trees/resource/pickable/media/scrap_scrap.png"
-dest_files=["res://.godot/imported/scrap_scrap.png-a188b0fa0fb281d3b62d81cf2e364928.s3tc.ctex"]
+source_file="res://trees/station/check_station/media/tv_metal.png"
+dest_files=["res://.godot/imported/tv_metal.png-1367ecc069f7dbd7ecf3b7a0296c85f7.s3tc.ctex"]
 
 [params]
 

@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://8qlh5wng8j0i"]
+
+[ext_resource type="Script" path="res://trees/station/check_station/script/notes.gd" id="1_rmjeg"]
+[ext_resource type="PackedScene" uid="uid://b37yynwm71hrh" path="res://trees/station/check_station/media/info_panel.glb" id="2_nlylf"]
+
+[node name="notes" type="Node3D"]
+script = ExtResource("1_rmjeg")
+
+[node name="info_panel" parent="." instance=ExtResource("2_nlylf")]
+
+[node name="now_note" type="Label3D" parent="info_panel"]
+transform = Transform3D(-0.411766, 3.2625e-08, -1.52133e-08, 0, 0.17402, 0.373187, 3.59977e-08, 0.373187, -0.17402, 0, 0.62448, 0.0814658)
+text = "asd
+"

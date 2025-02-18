@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=3 uid="uid://djf8e6yovwqf8"]
+
+[ext_resource type="Script" path="res://trees/station/check_station/script/on_off_complex.gd" id="1_myp52"]
+[ext_resource type="PackedScene" uid="uid://d2pdbqc2gxewh" path="res://trees/UI/scene/button_3d.tscn" id="2_8td51"]
+[ext_resource type="PackedScene" uid="uid://b37yynwm71hrh" path="res://trees/station/check_station/media/info_panel.glb" id="3_5ntb7"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_as55a"]
+size = Vector3(1, 0.705566, 1)
+
+[node name="on-off_complex" type="Node3D"]
+script = ExtResource("1_myp52")
+
+[node name="Button3D" parent="." instance=ExtResource("2_8td51")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Button3D"]
+transform = Transform3D(0.490959, 0, 0, 0, 0.4, 0, 0, 0, 0.500898, 0, 0.566914, 0)
+shape = SubResource("BoxShape3D_as55a")
+
+[node name="info_panel" parent="." instance=ExtResource("3_5ntb7")]
+
+[node name="Label3D" type="Label3D" parent="info_panel"]
+transform = Transform3D(-0.481975, -3.81878e-08, 1.78073e-08, 0, 0.203691, 0.436818, -4.21356e-08, 0.436818, -0.203691, 0, 0.589426, 0)
+text = "touch to
+enable/disable
+generator"

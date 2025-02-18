@@ -1,10 +1,10 @@
 [gd_resource type="Resource" script_class="Pickable" load_steps=3 format=3 uid="uid://coq38dceryqj1"]
 
-[ext_resource type="PackedScene" uid="uid://ip5e8m65mmey" path="res://trees/resource/pickable/media/model_placeholder.tscn" id="1_465t1"]
 [ext_resource type="Script" path="res://trees/resource/pickable/script/pickable.gd" id="1_b1ht1"]
+[ext_resource type="PackedScene" uid="uid://dby7iw0nrmvgs" path="res://trees/resource/pickable/media/fixed_fix_kit.tscn" id="1_u6n2t"]
 
 [resource]
 script = ExtResource("1_b1ht1")
 name = "repair kit"
-model = ExtResource("1_465t1")
+model = ExtResource("1_u6n2t")
 adding = 0.3

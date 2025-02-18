@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://bvhekjqpfb8of"]
+
+[ext_resource type="PackedScene" uid="uid://bccg674ttro8n" path="res://trees/resource/pickable/media/glb/scrap.glb" id="1_akod6"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_agj5l"]
+size = Vector3(0.5, 0.5, 0.5)
+
+[node name="fixed_scrap" type="CollisionShape3D"]
+shape = SubResource("BoxShape3D_agj5l")
+
+[node name="scrap" parent="." instance=ExtResource("1_akod6")]

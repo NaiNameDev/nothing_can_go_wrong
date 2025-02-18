@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://dby7iw0nrmvgs"]
+
+[ext_resource type="PackedScene" uid="uid://ch8q51bdtesdm" path="res://trees/resource/pickable/media/glb/fix_kit.glb" id="1_vvixh"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_b8enu"]
+size = Vector3(1, 0.3, 1)
+
+[node name="fixed_fix_kit" type="CollisionShape3D"]
+shape = SubResource("BoxShape3D_b8enu")
+
+[node name="fix_kit" parent="." instance=ExtResource("1_vvixh")]

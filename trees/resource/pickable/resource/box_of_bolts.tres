@@ -1,10 +1,10 @@
 [gd_resource type="Resource" script_class="Pickable" load_steps=3 format=3 uid="uid://b766kg3eudqqf"]
 
-[ext_resource type="PackedScene" uid="uid://ip5e8m65mmey" path="res://trees/resource/pickable/media/model_placeholder.tscn" id="1_2c616"]
 [ext_resource type="Script" path="res://trees/resource/pickable/script/pickable.gd" id="1_6o3nh"]
+[ext_resource type="PackedScene" uid="uid://q7mngkx8eb64" path="res://trees/resource/pickable/media/bolt_box_fixed.tscn" id="1_momgl"]
 
 [resource]
 script = ExtResource("1_6o3nh")
 name = "box of bolts"
-model = ExtResource("1_2c616")
+model = ExtResource("1_momgl")
 adding = 0.0

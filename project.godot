@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="nothing_can_go_wrong"
-run/main_scene="res://trees/level/test_level/scene/test_level.tscn"
+run/main_scene="res://trees/level/level/scene/level.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://icon.svg"
 

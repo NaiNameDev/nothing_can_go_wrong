@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://cc3snikongkp1"]
+
+[ext_resource type="PackedScene" uid="uid://pq4brettipil" path="res://trees/resource/pickable/media/glb/pick_me_oil.glb" id="1_1pt0h"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_8a7t4"]
+size = Vector3(0.5, 1, 0.5)
+
+[node name="fixed_oli" type="CollisionShape3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.487265, 0)
+shape = SubResource("BoxShape3D_8a7t4")
+
+[node name="pick_me_oil" parent="." instance=ExtResource("1_1pt0h")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.240133, 0)

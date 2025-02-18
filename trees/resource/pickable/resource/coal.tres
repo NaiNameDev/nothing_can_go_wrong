@@ -1,10 +1,10 @@
 [gd_resource type="Resource" script_class="Pickable" load_steps=3 format=3 uid="uid://c6wl35k6gbk1n"]
 
+[ext_resource type="PackedScene" uid="uid://dxjxj3sjdvh5i" path="res://trees/resource/pickable/media/fixed_coal.tscn" id="1_ha2wv"]
 [ext_resource type="Script" path="res://trees/resource/pickable/script/pickable.gd" id="1_ovsdw"]
-[ext_resource type="PackedScene" uid="uid://bolb6dkr850mg" path="res://trees/resource/pickable/media/kill_me_bag_of_coal.glb" id="1_r8k8t"]
 
 [resource]
 script = ExtResource("1_ovsdw")
 name = "bag of coal"
-model = ExtResource("1_r8k8t")
+model = ExtResource("1_ha2wv")
 adding = 0.5

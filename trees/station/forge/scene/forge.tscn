@@ -304,3 +304,9 @@ collision_mask = 5
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="forge/Cube_002/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_fst7w")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.183945, -0.230927, 2.06616)
+visible = false
+light_color = Color(1, 0.611765, 0, 1)
+light_specular = 0.0

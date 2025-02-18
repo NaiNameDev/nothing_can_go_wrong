@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://pq4brettipil"
-path="res://.godot/imported/pick_me_oil.glb-d2c8e75daf17ed34f3a22d8e3a9781f0.scn"
+uid="uid://dsy8yphg16k3r"
+path="res://.godot/imported/box.glb-732033cff5cf187d574ee0552c1a8904.scn"
 
 [deps]
 
-source_file="res://trees/resource/pickable/media/pick_me_oil.glb"
-dest_files=["res://.godot/imported/pick_me_oil.glb-d2c8e75daf17ed34f3a22d8e3a9781f0.scn"]
+source_file="res://trees/resource/pickable/media/glb/box.glb"
+dest_files=["res://.godot/imported/box.glb-732033cff5cf187d574ee0552c1a8904.scn"]
 
 [params]
 

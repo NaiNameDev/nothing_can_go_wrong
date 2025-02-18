@@ -1,5 +1,7 @@
 extends "res://trees/station/forge/script/forge.gd"
 
+@onready var anim: AnimationPlayer = $handler/AnimationPlayer
+
 func tick():
 	if works:
 		first_res_left -= first_res_per_second
@@ -8,3 +10,7 @@ func tick():
 		out_now += out_per_second
 		
 		update_info()
+		if anim.is_playing() == false:
+			anim.play("a1")
+	else:
+		anim.stop()

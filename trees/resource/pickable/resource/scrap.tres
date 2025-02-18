@@ -1,10 +1,10 @@
 [gd_resource type="Resource" script_class="Pickable" load_steps=3 format=3 uid="uid://can83e4v56vor"]
 
 [ext_resource type="Script" path="res://trees/resource/pickable/script/pickable.gd" id="1_f75sr"]
-[ext_resource type="PackedScene" uid="uid://bccg674ttro8n" path="res://trees/resource/pickable/media/scrap.glb" id="1_m3h3e"]
+[ext_resource type="PackedScene" uid="uid://bvhekjqpfb8of" path="res://trees/resource/pickable/media/fixed_scrap.tscn" id="1_t63i5"]
 
 [resource]
 script = ExtResource("1_f75sr")
 name = "pressed scrap cube"
-model = ExtResource("1_m3h3e")
+model = ExtResource("1_t63i5")
 adding = 0.5

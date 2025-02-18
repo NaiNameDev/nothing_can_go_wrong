@@ -4,6 +4,13 @@ extends Node3D
 
 func _ready() -> void:
 	EventBus.connect("forge_break", forge_break)
+	EventBus.connect("enable_disable_system", on_off)
+
+func on_off(v: bool):
+	if v:
+		$tv/Cube/Sprite3D.visible = true
+	else:
+		$tv/Cube/Sprite3D.visible = false
 
 func forge_break(id: int, cause: String, station_name: String):
 	var new_text: Label = Label.new()

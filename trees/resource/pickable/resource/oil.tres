@@ -1,10 +1,10 @@
 [gd_resource type="Resource" script_class="Pickable" load_steps=3 format=3 uid="uid://daey2gmvm6yrm"]
 
 [ext_resource type="Script" path="res://trees/resource/pickable/script/pickable.gd" id="1_3avah"]
-[ext_resource type="PackedScene" uid="uid://pq4brettipil" path="res://trees/resource/pickable/media/pick_me_oil.glb" id="1_lqn0o"]
+[ext_resource type="PackedScene" uid="uid://cc3snikongkp1" path="res://trees/resource/pickable/media/fixed_oli.tscn" id="1_62ruf"]
 
 [resource]
 script = ExtResource("1_3avah")
 name = "bottle of oil"
-model = ExtResource("1_lqn0o")
+model = ExtResource("1_62ruf")
 adding = 0.5

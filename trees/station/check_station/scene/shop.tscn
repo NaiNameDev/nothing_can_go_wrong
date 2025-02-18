@@ -1,9 +1,51 @@
-[gd_scene load_steps=7 format=3 uid="uid://bo7jlf7q23ofy"]
+[gd_scene load_steps=12 format=4 uid="uid://bo7jlf7q23ofy"]
 
 [ext_resource type="Script" path="res://trees/station/check_station/script/info_panel.gd" id="1_6v2tb"]
 [ext_resource type="PackedScene" uid="uid://d2pdbqc2gxewh" path="res://trees/UI/scene/button_3d.tscn" id="1_v2xxt"]
+[ext_resource type="PackedScene" uid="uid://cqwybs6rgk4gg" path="res://trees/station/check_station/media/hall_in_still.glb" id="2_ad7kr"]
+[ext_resource type="Texture2D" uid="uid://bax3t1ufiftej" path="res://trees/station/check_station/media/tv_metal.png" id="4_ulvd7"]
 
-[sub_resource type="BoxMesh" id="BoxMesh_a4vd4"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ew417"]
+resource_name = "Material.001"
+cull_mode = 2
+albedo_texture = ExtResource("4_ulvd7")
+roughness = 0.5
+texture_filter = 2
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_lnlst"]
+_surfaces = [{
+"aabb": AABB(-1, -1, -1, 2, 2, 2),
+"format": 34896613377,
+"index_count": 36,
+"index_data": PackedByteArray("AAADAAEAAAACAAMAAgAHAAMAAgAGAAcABgAFAAcABgAEAAUABAABAAUABAAAAAEAAgAEAAYAAgAAAAQABwABAAMABwAFAAEA"),
+"name": "Material.001",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 8,
+"vertex_data": PackedByteArray("AAAAAP//AAAAAP////8AAAAAAAAAAAAAAAD//wAAAAD//wAA//8AAP///////wAA//8AAAAAAAD/////AAAAAA==")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_m5g2t"]
+resource_name = "tv_Cube_001"
+_surfaces = [{
+"aabb": AABB(-1, -1, -1, 2, 2, 2),
+"attribute_data": PackedByteArray("IkCrKpGneST/VapK3HOrKqxw/w//lapKhkyQTpGnE5//VaoKeJ+QTqxw/0//laoKIkCMQzDMeSQ2F1Nd3HOMQ45d/w/IqlNdhkyLODDME582F+TweJ+LOI5d/0/IquTw"),
+"format": 34896613399,
+"index_count": 36,
+"index_data": PackedByteArray("AgALAAUAAgAIAAsABgAVAAkABgASABUAFAARABcAFAAOABEADAADAA8ADAAAAAMABwANABMABwABAA0AFgAEAAoAFgAQAAQA"),
+"material": SubResource("StandardMaterial3D_ew417"),
+"name": "Material.001",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 24,
+"vertex_data": PackedByteArray("AAAAAP///78AAAAA////vwAAAAD//1TVAAD//////78AAP///////wAA/////1TVAAAAAAAA//8AAAAAAAD/vwAAAAAAAFTVAAD//wAA//8AAP//AAD//wAA//8AAFTV//8AAP///7///wAA////v///AAD//1TV/////////7///////////////////1TV//8AAAAA/////wAAAAD/v///AAAAAFTV/////wAA////////AAD///////8AAFTV/////wAA/39U1VTV//////9//79U1VTV/7//vwAA/39U1VTV/7//v/9//79U1VTV/////wAA/3+qKqoq//////9//7+qKqoq/7//vwAA/3+qKqoq/7//v/9//7+qKqoq")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_lnlst")
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_eiafs"]
+data = PackedVector3Array(-1, -1, 1, -1, 1, -1, -1, 1, 1, -1, -1, 1, -1, -1, -1, -1, 1, -1, -1, -1, -1, 1, 1, -1, -1, 1, -1, -1, -1, -1, 1, -1, -1, 1, 1, -1, 1, -1, -1, 1, 1, 1, 1, 1, -1, 1, -1, -1, 1, -1, 1, 1, 1, 1, 1, -1, 1, -1, 1, 1, 1, 1, 1, 1, -1, 1, -1, -1, 1, -1, 1, 1, -1, -1, -1, 1, -1, 1, 1, -1, -1, -1, -1, -1, -1, -1, 1, 1, -1, 1, 1, 1, -1, -1, 1, 1, -1, 1, -1, 1, 1, -1, 1, 1, 1, -1, 1, 1)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_dp6vq"]
 
@@ -14,66 +56,107 @@ albedo_color = Color(1, 0, 0, 1)
 material = SubResource("StandardMaterial3D_hyxpo")
 
 [node name="shop" type="Node3D" node_paths=PackedStringArray("dropper")]
-transform = Transform3D(1.13302, 0, 0, 0, 1.88837, 0, 0, 0, 0.944184, 0, 0, 0)
+transform = Transform3D(1.13302, 0, 0, 0, 1.88837, 0, 0, 0, 0.944184, 0.000274777, 0.00445652, -0.000509262)
 script = ExtResource("1_6v2tb")
-dropper = NodePath("MeshInstance3D2")
+dropper = NodePath("hall_in_still")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(1.728, 0, 0, 0, 0.98, 0, 0, 0, 0.2, 0, 0, 0)
-mesh = SubResource("BoxMesh_a4vd4")
+[node name="hall_in_still" parent="." instance=ExtResource("2_ad7kr")]
+transform = Transform3D(0.882597, 0, 0, 0, 0.529557, 0, 0, 0, 1.05912, 2.37554, 0.808308, 0.972088)
 
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
-transform = Transform3D(1.728, 0, 0, 0, 0.98, 0, 0, 0, 1.75997, 2.01901, 1.08566, 0.931777)
-mesh = SubResource("BoxMesh_a4vd4")
+[node name="tv" type="Node3D" parent="."]
+transform = Transform3D(0.882596, 0, 0, 0, 0.529557, 0, 0, 0, 1.05912, -0.000242149, -0.00236039, 0.000539312)
 
-[node name="Button3D" parent="." instance=ExtResource("1_v2xxt")]
+[node name="Cube" type="MeshInstance3D" parent="tv"]
+transform = Transform3D(-5.68118e-09, 0, -1.2997, 0, 0.779821, 0, 0.12997, 0, -5.68118e-08, 0.209521, 0.225342, -0.0396351)
+mesh = SubResource("ArrayMesh_m5g2t")
+skeleton = NodePath("")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="tv/Cube"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="tv/Cube/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_eiafs")
+
+[node name="for_poweroff" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="Button3D" parent="for_poweroff" instance=ExtResource("1_v2xxt")]
 transform = Transform3D(0.366385, 0, 0, 0, 0.0873801, 0, 0, 0, 0.154173, -0.581907, 0.405176, 0.0414297)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Button3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="for_poweroff/Button3D"]
 shape = SubResource("BoxShape3D_dp6vq")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Button3D"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="for_poweroff/Button3D"]
 mesh = SubResource("BoxMesh_6b7fk")
 
-[node name="Label3D" type="Label3D" parent="Button3D"]
+[node name="Label3D" type="Label3D" parent="for_poweroff/Button3D"]
 transform = Transform3D(1.18457, 0, 0, 0, 2.96143, 0, 0, 0, 2.96143, 0, 0, 0.542996)
 text = "buy coal"
 
-[node name="Button3D2" parent="." instance=ExtResource("1_v2xxt")]
+[node name="Button3D2" parent="for_poweroff" instance=ExtResource("1_v2xxt")]
 transform = Transform3D(0.366385, 0, 0, 0, 0.0873801, 0, 0, 0, 0.154173, -0.581907, 0.26404, 0.0414297)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Button3D2"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="for_poweroff/Button3D2"]
 shape = SubResource("BoxShape3D_dp6vq")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Button3D2"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="for_poweroff/Button3D2"]
 mesh = SubResource("BoxMesh_6b7fk")
 
-[node name="Label3D" type="Label3D" parent="Button3D2"]
+[node name="Label3D" type="Label3D" parent="for_poweroff/Button3D2"]
 transform = Transform3D(1.18457, 0, 0, 0, 2.96143, 0, 0, 0, 2.96143, 0, 0, 0.542996)
 text = "buy scrap"
 
-[node name="Button3D3" parent="." instance=ExtResource("1_v2xxt")]
+[node name="Button3D3" parent="for_poweroff" instance=ExtResource("1_v2xxt")]
 transform = Transform3D(0.366385, 0, 0, 0, 0.0873801, 0, 0, 0, 0.154173, -0.581907, 0.123097, 0.0414297)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Button3D3"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="for_poweroff/Button3D3"]
 shape = SubResource("BoxShape3D_dp6vq")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Button3D3"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="for_poweroff/Button3D3"]
 mesh = SubResource("BoxMesh_6b7fk")
 
-[node name="Label3D" type="Label3D" parent="Button3D3"]
+[node name="Label3D" type="Label3D" parent="for_poweroff/Button3D3"]
 transform = Transform3D(1.18457, 0, 0, 0, 2.96143, 0, 0, 0, 2.96143, 0, 0, 0.542996)
 text = "buy oil"
 
-[node name="Button3D4" parent="." instance=ExtResource("1_v2xxt")]
+[node name="Button3D4" parent="for_poweroff" instance=ExtResource("1_v2xxt")]
 transform = Transform3D(0.366385, 0, 0, 0, 0.0873801, 0, 0, 0, 0.154173, -0.581907, -0.0205332, 0.0414297)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Button3D4"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="for_poweroff/Button3D4"]
 shape = SubResource("BoxShape3D_dp6vq")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Button3D4"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="for_poweroff/Button3D4"]
 mesh = SubResource("BoxMesh_6b7fk")
 
-[node name="Label3D" type="Label3D" parent="Button3D4"]
+[node name="Label3D" type="Label3D" parent="for_poweroff/Button3D4"]
 transform = Transform3D(1.18457, 0, 0, 0, 2.96143, 0, 0, 0, 2.96143, 0, 0, 0.542996)
 text = "buy rep_kit"
+
+[node name="Button3D5" parent="for_poweroff" instance=ExtResource("1_v2xxt")]
+transform = Transform3D(0.366385, 0, 0, 0, 0.0873801, 0, 0, 0, 0.154173, -0.581907, -0.150283, 0.0414297)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="for_poweroff/Button3D5"]
+shape = SubResource("BoxShape3D_dp6vq")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="for_poweroff/Button3D5"]
+mesh = SubResource("BoxMesh_6b7fk")
+
+[node name="Label3D" type="Label3D" parent="for_poweroff/Button3D5"]
+transform = Transform3D(1.18457, 0, 0, 0, 2.96143, 0, 0, 0, 2.96143, 0, 0, 0.542996)
+text = "buy box"
+
+[node name="Button3D6" parent="for_poweroff" instance=ExtResource("1_v2xxt")]
+transform = Transform3D(0.366385, 0, 0, 0, 0.0873801, 0, 0, 0, 0.154173, -0.146532, 0.40708, 0.0414297)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="for_poweroff/Button3D6"]
+shape = SubResource("BoxShape3D_dp6vq")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="for_poweroff/Button3D6"]
+mesh = SubResource("BoxMesh_6b7fk")
+
+[node name="Label3D" type="Label3D" parent="for_poweroff/Button3D6"]
+transform = Transform3D(1.18457, 0, 0, 0, 2.96143, 0, 0, 0, 2.96143, 0, 0, 0.542996)
+text = "buy shotgun"
+
+[node name="Label3D2" type="Label3D" parent="for_poweroff"]
+transform = Transform3D(0.434008, 0, 0, 0, 0.25877, 0, 0, 0, 0.456572, 0.87582, 0.40708, 0.0984602)
+text = "money"

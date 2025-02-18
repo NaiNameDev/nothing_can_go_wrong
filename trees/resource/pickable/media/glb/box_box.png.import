@@ -1,0 +1,38 @@
+[remap]
+
+importer="texture"
+type="CompressedTexture2D"
+uid="uid://8gdu5rfevd51"
+path.s3tc="res://.godot/imported/box_box.png-d5ad3142e8de0af8e92087f5e4950cf3.s3tc.ctex"
+metadata={
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
+}
+generator_parameters={
+"md5": "37d43a62ae73c9d6eec1b8f69ba4bbca"
+}
+
+[deps]
+
+source_file="res://trees/resource/pickable/media/glb/box_box.png"
+dest_files=["res://.godot/imported/box_box.png-d5ad3142e8de0af8e92087f5e4950cf3.s3tc.ctex"]
+
+[params]
+
+compress/mode=2
+compress/high_quality=false
+compress/lossy_quality=0.7
+compress/hdr_compression=1
+compress/normal_map=0
+compress/channel_pack=0
+mipmaps/generate=true
+mipmaps/limit=-1
+roughness/mode=0
+roughness/src_normal=""
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/normal_map_invert_y=false
+process/hdr_as_srgb=false
+process/hdr_clamp_exposure=false
+process/size_limit=0
+detect_3d/compress_to=0

@@ -1,14 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://w1qq8f3cqful"]
+[gd_scene load_steps=2 format=3 uid="uid://w1qq8f3cqful"]
 
 [ext_resource type="Script" path="res://trees/resource/pickable/script/dropped_item.gd" id="1_k63gv"]
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_sb0vj"]
-
 [node name="dropped_item" type="RigidBody3D" groups=["item"]]
-collision_layer = 6
-collision_mask = 6
+collision_layer = 7
+collision_mask = 7
+mass = 0.133
 script = ExtResource("1_k63gv")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
-shape = SubResource("BoxShape3D_sb0vj")
