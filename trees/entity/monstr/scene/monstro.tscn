@@ -1,0 +1,77 @@
+[gd_scene load_steps=8 format=3 uid="uid://30lmibqivgah"]
+
+[ext_resource type="Script" path="res://trees/entity/monstr/script/monstro.gd" id="1_30no6"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_yd414"]
+height = 2.42581
+
+[sub_resource type="ORMMaterial3D" id="ORMMaterial3D_lgtld"]
+vertex_color_use_as_albedo = true
+emission_enabled = true
+
+[sub_resource type="SphereMesh" id="SphereMesh_5n433"]
+material = SubResource("ORMMaterial3D_lgtld")
+radial_segments = 12
+rings = 12
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_jgh5a"]
+radius = 4.70106
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_d0bx5"]
+radius = 2.01526
+
+[sub_resource type="BoxMesh" id="BoxMesh_jrtga"]
+size = Vector3(0.2, 2, 2)
+
+[node name="monstro" type="CharacterBody3D"]
+script = ExtResource("1_30no6")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_yd414")
+disabled = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(-2.04976e-08, 0, -0.468929, 0, 0.468929, 0, 0.468929, 0, -2.04976e-08, 0.363849, 1.29075, 0.0248497)
+mesh = SubResource("SphereMesh_5n433")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="MeshInstance3D"]
+transform = Transform3D(2.13252, 0, 0, 0, 2.13252, 0, 0, 0, 2.13252, -0.553192, 0, 0.0114523)
+light_energy = 16.0
+light_indirect_energy = 0.0
+light_volumetric_fog_energy = 0.0
+omni_range = 0.1
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="MeshInstance3D"]
+transform = Transform3D(2.13252, 0, 0, 0, 2.13252, 0, 0, 0, 2.13252, -0.683915, 0, 1.48851)
+light_energy = 16.0
+light_indirect_energy = 0.0
+light_volumetric_fog_energy = 0.0
+omni_range = 0.1
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(-2.04976e-08, 0, -0.468929, 0, 0.468929, 0, 0.468929, 0, -2.04976e-08, -0.338084, 1.29075, -0.0440373)
+mesh = SubResource("SphereMesh_5n433")
+
+[node name="Area3D" type="Area3D" parent="."]
+collision_layer = 16
+collision_mask = 16
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+shape = SubResource("SphereShape3D_jgh5a")
+
+[node name="death_zone" type="Area3D" parent="."]
+collision_layer = 32
+collision_mask = 32
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="death_zone"]
+shape = SubResource("SphereShape3D_d0bx5")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 3.20142, 0, 1, 0, -4.37114e-08, 0.0151194, 0, 0.0317071)
+mesh = SubResource("BoxMesh_jrtga")
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
+simplify_path = true
+debug_enabled = true
+
+[connection signal="body_entered" from="death_zone" to="." method="_on_death_zone_body_entered"]

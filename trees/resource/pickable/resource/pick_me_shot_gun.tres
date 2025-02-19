@@ -5,6 +5,6 @@
 
 [resource]
 script = ExtResource("1_agbpm")
-name = ""
+name = "shotgun"
 model = ExtResource("1_8r38l")
 adding = 0.5

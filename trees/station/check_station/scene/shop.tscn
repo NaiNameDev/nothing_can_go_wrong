@@ -1,9 +1,88 @@
-[gd_scene load_steps=12 format=4 uid="uid://bo7jlf7q23ofy"]
+[gd_scene load_steps=19 format=4 uid="uid://bo7jlf7q23ofy"]
 
 [ext_resource type="Script" path="res://trees/station/check_station/script/info_panel.gd" id="1_6v2tb"]
 [ext_resource type="PackedScene" uid="uid://d2pdbqc2gxewh" path="res://trees/UI/scene/button_3d.tscn" id="1_v2xxt"]
-[ext_resource type="PackedScene" uid="uid://cqwybs6rgk4gg" path="res://trees/station/check_station/media/hall_in_still.glb" id="2_ad7kr"]
+[ext_resource type="Texture2D" uid="uid://cfikhp6xebmkw" path="res://trees/station/check_station/media/hall_in_still_metal_hall.png" id="2_7cx04"]
 [ext_resource type="Texture2D" uid="uid://bax3t1ufiftej" path="res://trees/station/check_station/media/tv_metal.png" id="4_ulvd7"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ym5ex"]
+resource_name = "metal_hall"
+cull_mode = 2
+albedo_texture = ExtResource("2_7cx04")
+roughness = 0.5
+texture_filter = 2
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_ysrq0"]
+_surfaces = [{
+"aabb": AABB(-0.866025, -1, -1, 1.73205, 2, 2),
+"format": 34896613377,
+"index_count": 60,
+"index_data": PackedByteArray("AAADAAEAAAACAAMAAgAFAAMAAgAEAAUABAAHAAUABAAGAAcABgAJAAcABgAIAAkABQABAAMAAQAJAAsACQAFAAcAAQAFAAkACAALAAkACAAKAAsACgABAAsACgAAAAEACgACAAAAAgAGAAQABgAKAAgAAgAKAAYA"),
+"lods": [0.543808, PackedByteArray("AAAFAAEAAAAEAAUABAAHAAUABAAGAAcABgAJAAcABgAIAAkACQAFAAcAAQAFAAkACAABAAkACAAAAAEACAAEAAAABAAIAAYA")],
+"name": "metal_hall",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 12,
+"vertex_data": PackedByteArray("/38AAAAAAAD/f///AAAAAP//AAD/PwAA//////8/AAD//wAA/78AAP//////vwAA/38AAP//AAD/f/////8AAAAAAAD/vwAAAAD///+/AAAAAAAA/z8AAAAA////PwAA")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_hmlqg"]
+resource_name = "hall_in_still_Cylinder_001"
+_surfaces = [{
+"aabb": AABB(-0.866025, -1, -1, 1.73205, 2, 2),
+"attribute_data": PackedByteArray("f7nICsEf8uvBHtMF/z+Ogj4y8us+MdMFOfOARMEfL6bBHy+mNHVHoT4yL6Y+Mi+mOfPwt8EfbWDBH21gNHW33j4ybWA+Mm1gf7mn8cEfqhrBHhvX/z9v/T4yqho+MRvXxX/wt8EeWJHBHliRygq33j4xWJE+MViRxX+ARMEelkvBHpZLygpHoT4xlks+MZZLwR/y6z4x0wXBH21gPjJtYMEeWJE+MViR"),
+"format": 34896613399,
+"index_count": 60,
+"index_data": PackedByteArray("AQAKAAQAAQAHAAoACAARAAsACAAOABEADQAWABAADQATABYAFAAcABcAFAAZABwADwADAAkAAwAbACEAGwAPABUAAwAPABsAGgAjAB0AGgAgACMAHwAFACIAHwACAAUAHgAGAAAABgASAAwAEgAeABgABgAeABIA"),
+"lods": [0.543808, PackedByteArray("JAAnAAQAJAAmACcADQAWABAADQATABYAFAAcABcAFAAZABwAGwAPABUAAwAPABsAKAAlACkAKAACACUAGAAMAAAADAAYABIA")],
+"material": SubResource("StandardMaterial3D_ym5ex"),
+"name": "metal_hall",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 42,
+"vertex_data": PackedByteArray("/38AAAAA/z//fwAAAAD/8P9/AAAAAP/w/3///wAA/7//f///AAD/8P9///8AAP/w//8AAP8//z///wAA/z//8P//AAD/P1TV//////8//7///////z//8P//////P1TV//8AAP+//z///wAA/7+6wv//AAD/v1TV//////+//7///////7+6wv//////v1TV/38AAP///z//fwAA//+6wv9/AAD//7rC/3///////7//f/////+6wv9//////7rCAAAAAP+//z8AAAAA/7+6wgAAAAD/v1TVAAD///+//78AAP///7+6wgAA////v1TVAAAAAP8//z8AAAAA/z//8AAAAAD/P1TVAAD///8//78AAP///z//8AAA////P1TV/38AAAAAYOf/f///AAAj5///AAD/v2bY//////+/Gd4AAAAA/7+Z2wAA////v8HYAAD/f3A4cDiOx47H////f3A4cDiOx47HAAD/f3A4cDiqKqoq////f3A4cDiqKqoqAAD/f1QWVBaqKqoq////f1QWVBaqKqoqAAD/f1QWVBaq6arp////f1QWVBaq6arpAAD/f6rpqulU1VTV////f6rpqulU1VTVAAD/f47HjsdU1VTV////f47HjsdU1VTV8zPzMyjMKMxyLHIseC94L9DR0NFZ01nT")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_ysrq0")
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_7pobl"]
+data = PackedVector3Array(0, -1, -1, 0.866, 1, -0.5, 0, 1, -1, 0, -1, -1, 0.866, -1, -0.5, 0.866, 1, -0.5, 0.866, -1, -0.5, 0.866, 1, 0.5, 0.866, 1, -0.5, 0.866, -1, -0.5, 0.866, -1, 0.5, 0.866, 1, 0.5, 0.866, -1, 0.5, 0, 1, 1, 0.866, 1, 0.5, 0.866, -1, 0.5, 0, -1, 1, 0, 1, 1, 0, -1, 1, -0.866, 1, 0.5, 0, 1, 1, 0, -1, 1, -0.866, -1, 0.5, -0.866, 1, 0.5, 0.866, 1, 0.5, 0, 1, -1, 0.866, 1, -0.5, 0, 1, -1, -0.866, 1, 0.5, -0.866, 1, -0.5, -0.866, 1, 0.5, 0.866, 1, 0.5, 0, 1, 1, 0, 1, -1, 0.866, 1, 0.5, -0.866, 1, 0.5, -0.866, -1, 0.5, -0.866, 1, -0.5, -0.866, 1, 0.5, -0.866, -1, 0.5, -0.866, -1, -0.5, -0.866, 1, -0.5, -0.866, -1, -0.5, 0, 1, -1, -0.866, 1, -0.5, -0.866, -1, -0.5, 0, -1, -1, 0, 1, -1, -0.866, -1, -0.5, 0.866, -1, -0.5, 0, -1, -1, 0.866, -1, -0.5, 0, -1, 1, 0.866, -1, 0.5, 0, -1, 1, -0.866, -1, -0.5, -0.866, -1, 0.5, 0.866, -1, -0.5, -0.866, -1, -0.5, 0, -1, 1)
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_yirky"]
+_surfaces = [{
+"aabb": AABB(-0.866025, -1, -1, 1.73205, 2, 2),
+"format": 34896613377,
+"index_count": 36,
+"index_data": PackedByteArray("AAADAAEAAAACAAMAAgAFAAMAAgAEAAUABAAHAAUABAAGAAcABgAJAAcABgAIAAkACAALAAkACAAKAAsACgABAAsACgAAAAEA"),
+"name": "metal_hall",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 12,
+"vertex_data": PackedByteArray("/38AAAAAAAD/f///AAAAAP//AAD/PwAA//////8/AAD//wAA/78AAP//////vwAA/38AAP//AAD/f/////8AAAAAAAD/vwAAAAD///+/AAAAAAAA/z8AAAAA////PwAA")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_r2bv5"]
+resource_name = "hall_in_still_Cylinder_002"
+_surfaces = [{
+"aabb": AABB(-0.866025, -1, -1, 1.73205, 2, 2),
+"attribute_data": PackedByteArray("DIa2RPMBtkQMhqkC8wGpAghwtkQIcLZECHCpAghwqQIDWrZEA1q2RANaqQIDWqkC/0O2RP9DtkT/Q6kC/0OpAvsttkT7LbZE+y2pAvstqQL3F7ZE9xe2RPcXqQL3F6kC"),
+"format": 34896613399,
+"index_count": 36,
+"index_data": PackedByteArray("AAAGAAIAAAAEAAYABQALAAcABQAJAAsACAAOAAoACAAMAA4ADQASAA8ADQAQABIAEQAXABMAEQAVABcAFAADABYAFAABAAMA"),
+"material": SubResource("StandardMaterial3D_ym5ex"),
+"name": "metal_hall",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 24,
+"vertex_data": PackedByteArray("/38AAAAAqer/fwAAAACp6v9///8AAKnq/3///wAAqer//wAA/z+p6v//AAD/P/+///////8/qer//////z//v///AAD/v1SV//8AAP+//7///////79Ulf//////v/+//38AAP//VJX/fwAA//9Ulf9//////1SV/3//////VJUAAAAA/79UlQAAAAD/v/+/AAD///+/VJUAAP///7//vwAAAAD/P6nqAAAAAP8//78AAP///z+p6gAA////P/+//38AAP9/////fwAA/3////9/AAD/fwAA/38AAP9/AAD/fwAA/38AAP9/AAD/fwAA/38AAP9/////fwAA/3////9/////f////3////9/////f////3////9/////f///")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_yirky")
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_dxlrv"]
+data = PackedVector3Array(0, -1, -1, 0.866, 1, -0.5, 0, 1, -1, 0, -1, -1, 0.866, -1, -0.5, 0.866, 1, -0.5, 0.866, -1, -0.5, 0.866, 1, 0.5, 0.866, 1, -0.5, 0.866, -1, -0.5, 0.866, -1, 0.5, 0.866, 1, 0.5, 0.866, -1, 0.5, 0, 1, 1, 0.866, 1, 0.5, 0.866, -1, 0.5, 0, -1, 1, 0, 1, 1, 0, -1, 1, -0.866, 1, 0.5, 0, 1, 1, 0, -1, 1, -0.866, -1, 0.5, -0.866, 1, 0.5, -0.866, -1, 0.5, -0.866, 1, -0.5, -0.866, 1, 0.5, -0.866, -1, 0.5, -0.866, -1, -0.5, -0.866, 1, -0.5, -0.866, -1, -0.5, 0, 1, -1, -0.866, 1, -0.5, -0.866, -1, -0.5, 0, -1, -1, 0, 1, -1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ew417"]
 resource_name = "Material.001"
@@ -55,13 +134,41 @@ albedo_color = Color(1, 0, 0, 1)
 [sub_resource type="BoxMesh" id="BoxMesh_6b7fk"]
 material = SubResource("StandardMaterial3D_hyxpo")
 
-[node name="shop" type="Node3D" node_paths=PackedStringArray("dropper")]
+[node name="shop" type="Node3D" node_paths=PackedStringArray("dropper", "dropper2")]
 transform = Transform3D(1.13302, 0, 0, 0, 1.88837, 0, 0, 0, 0.944184, 0.000274777, 0.00445652, -0.000509262)
 script = ExtResource("1_6v2tb")
 dropper = NodePath("hall_in_still")
+dropper2 = NodePath("hall_in_still/Node3D")
 
-[node name="hall_in_still" parent="." instance=ExtResource("2_ad7kr")]
+[node name="hall_in_still" type="Node3D" parent="."]
 transform = Transform3D(0.882597, 0, 0, 0, 0.529557, 0, 0, 0, 1.05912, 2.37554, 0.808308, 0.972088)
+
+[node name="Cylinder_001" type="MeshInstance3D" parent="hall_in_still"]
+transform = Transform3D(1.22225, 0, 0, 0, -1.40051e-08, 1.22225, 0, -0.320399, -5.34262e-08, 0, 0.515443, 0.484054)
+mesh = SubResource("ArrayMesh_hmlqg")
+skeleton = NodePath("")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="hall_in_still/Cylinder_001"]
+collision_layer = 8
+collision_mask = 8
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="hall_in_still/Cylinder_001/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_7pobl")
+
+[node name="Cylinder" type="MeshInstance3D" parent="hall_in_still"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0.605491, -0.484054)
+mesh = SubResource("ArrayMesh_r2bv5")
+skeleton = NodePath("")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="hall_in_still/Cylinder"]
+collision_layer = 8
+collision_mask = 8
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="hall_in_still/Cylinder/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_dxlrv")
+
+[node name="Node3D" type="Node3D" parent="hall_in_still"]
+transform = Transform3D(1.13302, 0, 0, 0, 1.88837, 0, 0, 0, 0.94418, -0.0839562, 0.0892823, 0.615343)
 
 [node name="tv" type="Node3D" parent="."]
 transform = Transform3D(0.882596, 0, 0, 0, 0.529557, 0, 0, 0, 1.05912, -0.000242149, -0.00236039, 0.000539312)
@@ -77,7 +184,6 @@ skeleton = NodePath("")
 shape = SubResource("ConcavePolygonShape3D_eiafs")
 
 [node name="for_poweroff" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 
 [node name="Button3D" parent="for_poweroff" instance=ExtResource("1_v2xxt")]
 transform = Transform3D(0.366385, 0, 0, 0, 0.0873801, 0, 0, 0, 0.154173, -0.581907, 0.405176, 0.0414297)
@@ -91,6 +197,26 @@ mesh = SubResource("BoxMesh_6b7fk")
 [node name="Label3D" type="Label3D" parent="for_poweroff/Button3D"]
 transform = Transform3D(1.18457, 0, 0, 0, 2.96143, 0, 0, 0, 2.96143, 0, 0, 0.542996)
 text = "buy coal"
+
+[node name="Label3D2" type="Label3D" parent="for_poweroff/Button3D"]
+transform = Transform3D(1.18457, 0, 0, 0, 2.96143, 0, 0, 0, 2.96143, 0.840454, 0, 0.369298)
+text = "4$"
+
+[node name="Label3D3" type="Label3D" parent="for_poweroff/Button3D"]
+transform = Transform3D(1.18457, 0, 0, 0, 2.96143, 0, 0, 0, 2.96143, 0.840454, -1.62045, 0.369298)
+text = "5$"
+
+[node name="Label3D4" type="Label3D" parent="for_poweroff/Button3D"]
+transform = Transform3D(1.18457, 0, 0, 0, 2.96143, 0, 0, 0, 2.96143, 0.840454, -3.1657, 0.369298)
+text = "15$"
+
+[node name="Label3D5" type="Label3D" parent="for_poweroff/Button3D"]
+transform = Transform3D(1.18457, 0, 0, 0, 2.96143, 0, 0, 0, 2.96143, 0.840454, -4.86284, 0.369298)
+text = "30$"
+
+[node name="Label3D6" type="Label3D" parent="for_poweroff/Button3D"]
+transform = Transform3D(1.18457, 0, 0, 0, 2.96143, 0, 0, 0, 2.96143, 0.840454, -6.41265, 0.369298)
+text = "3$"
 
 [node name="Button3D2" parent="for_poweroff" instance=ExtResource("1_v2xxt")]
 transform = Transform3D(0.366385, 0, 0, 0, 0.0873801, 0, 0, 0, 0.154173, -0.581907, 0.26404, 0.0414297)
@@ -128,7 +254,7 @@ shape = SubResource("BoxShape3D_dp6vq")
 mesh = SubResource("BoxMesh_6b7fk")
 
 [node name="Label3D" type="Label3D" parent="for_poweroff/Button3D4"]
-transform = Transform3D(1.18457, 0, 0, 0, 2.96143, 0, 0, 0, 2.96143, 0, 0, 0.542996)
+transform = Transform3D(1.0488, 0, 0, 0, 2.62201, 0, 0, 0, 2.62201, 0, 0, 0.542996)
 text = "buy rep_kit"
 
 [node name="Button3D5" parent="for_poweroff" instance=ExtResource("1_v2xxt")]
@@ -145,18 +271,41 @@ transform = Transform3D(1.18457, 0, 0, 0, 2.96143, 0, 0, 0, 2.96143, 0, 0, 0.542
 text = "buy box"
 
 [node name="Button3D6" parent="for_poweroff" instance=ExtResource("1_v2xxt")]
-transform = Transform3D(0.366385, 0, 0, 0, 0.0873801, 0, 0, 0, 0.154173, -0.146532, 0.40708, 0.0414297)
+transform = Transform3D(0.366385, 0, 0, 0, 0.0873801, 0, 0, 0, 0.154173, 0.0971501, 0.40708, 0.0414297)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="for_poweroff/Button3D6"]
 shape = SubResource("BoxShape3D_dp6vq")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="for_poweroff/Button3D6"]
+transform = Transform3D(0.999997, 0, -0.00249582, 0, 1, 0, 0.00249582, 0, 0.999997, 0, 0, 0)
 mesh = SubResource("BoxMesh_6b7fk")
 
 [node name="Label3D" type="Label3D" parent="for_poweroff/Button3D6"]
-transform = Transform3D(1.18457, 0, 0, 0, 2.96143, 0, 0, 0, 2.96143, 0, 0, 0.542996)
+transform = Transform3D(0.956544, 0, 0, 0, 2.39137, 0, 0, 0, 2.39137, 0, 0, 0.542996)
 text = "buy shotgun"
 
+[node name="Label3D2" type="Label3D" parent="for_poweroff/Button3D6"]
+transform = Transform3D(0.956545, 0, 0, 0, 2.39137, 0, 0, 0, 2.39137, 0.84122, 0, 0.380079)
+text = "100$"
+
+[node name="Label3D3" type="Label3D" parent="for_poweroff/Button3D6"]
+transform = Transform3D(0.956545, 0, 0, 0, 2.39137, 0, 0, 0, 2.39137, 0.84122, -1.67402, 0.380079)
+text = "50$"
+
+[node name="Button3D7" parent="for_poweroff" instance=ExtResource("1_v2xxt")]
+transform = Transform3D(0.366385, 0, 0, 0, 0.08738, 0, 0, 0, 0.154173, 0.0971501, 0.265105, 0.0414297)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="for_poweroff/Button3D7"]
+shape = SubResource("BoxShape3D_dp6vq")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="for_poweroff/Button3D7"]
+transform = Transform3D(0.999997, 0, -0.00249582, 0, 1, 0, 0.00249582, 0, 0.999997, 0, 0, 0)
+mesh = SubResource("BoxMesh_6b7fk")
+
+[node name="Label3D" type="Label3D" parent="for_poweroff/Button3D7"]
+transform = Transform3D(0.619901, 0, 0, 0, 1.54976, 0, 0, 0, 1.54976, 0, 0, 0.542996)
+text = "buy shotgun ammo"
+
 [node name="Label3D2" type="Label3D" parent="for_poweroff"]
-transform = Transform3D(0.434008, 0, 0, 0, 0.25877, 0, 0, 0, 0.456572, 0.87582, 0.40708, 0.0984602)
-text = "money"
+transform = Transform3D(0.434008, 0, 0, 0, 0.25877, 0, 0, 0, 0.456572, 0.902622, -0.172022, 0.0984602)
+text = "you have 300$"

@@ -10,3 +10,14 @@ func drop_item(from: Vector3, to: Vector3, pick_me: Pickable):
 	tmpd.linear_velocity.y += 3
 	tmpd.angular_velocity = Vector3(randf_range(0,3), randf_range(0,3), randf_range(0,3))
 	get_tree().root.add_child(tmpd)
+
+func play_sound(pos: Vector3, sound: String, add_to = null):
+	if !add_to:
+		add_to = get_tree().root
+	var player: AudioStreamPlayer3D = AudioStreamPlayer3D.new()
+	player.position = pos
+	player.stream = load(sound)
+	add_to.add_child(player)
+	player.play()
+	await player.finished
+	player.queue_free()

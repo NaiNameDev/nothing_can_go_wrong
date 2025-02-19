@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=4 uid="uid://cq502mwuo50uu"]
+[gd_scene load_steps=30 format=4 uid="uid://cq502mwuo50uu"]
 
 [ext_resource type="Script" path="res://trees/station/handler/script/handler.gd" id="1_knxhl"]
 [ext_resource type="Resource" uid="uid://b766kg3eudqqf" path="res://trees/resource/pickable/resource/box_of_bolts.tres" id="2_k2x0p"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://1mtvpwab4yhs" path="res://trees/station/add_area/scene/add_area.tscn" id="6_m5cs1"]
 [ext_resource type="Texture2D" uid="uid://c7ddhjj2vm15j" path="res://trees/station/handler/media/handler_btn_pls_blue_btn.png" id="7_lnq2q"]
 [ext_resource type="Texture2D" uid="uid://cdjeaba6usbug" path="res://trees/station/handler/media/handler_metal_hall.png" id="8_3i5ca"]
+[ext_resource type="PackedScene" uid="uid://vop6r1lr8g7w" path="res://trees/station/check_station/media/tv.glb" id="9_dm60q"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5kg3b"]
 resource_name = "btn"
@@ -277,26 +278,29 @@ libraries = {
 }
 
 [node name="info" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.617818, 0.786321, 0, -0.786321, 0.617818, 0, -1.52948, 0.91836)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.138762, -0.26755)
 
 [node name="Label3D" type="Label3D" parent="info"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.000812709, 0.737568, 1.25435)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.35949, 0.737568, 1.26302)
 text = "asdasdsd"
 
 [node name="Label3D2" type="Label3D" parent="info"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.000812709, 0.451116, 1.25435)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.534977, 0.733409, 1.26302)
 text = "asdasdsd"
 
 [node name="Label3D3" type="Label3D" parent="info"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.000812709, 0.170046, 1.25435)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.10673, 0.344864, 1.26302)
 text = "asdasdsd"
 
 [node name="Label3D4" type="Label3D" parent="info"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.000812709, 0.978139, 1.25435)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.105939, 0.956999, 1.26302)
 text = "asdasdsd"
 
+[node name="tv" parent="info" instance=ExtResource("9_dm60q")]
+transform = Transform3D(-3.9583e-08, 0, -0.905553, 0, 0.905553, 0, 0.905553, 0, -3.9583e-08, -0.0824058, 0.596754, 1.17154)
+
 [node name="add_area" parent="." instance=ExtResource("6_m5cs1")]
-transform = Transform3D(3.30492, 0, 0, 0, 3.30492, 0, 0, 0, 3.30492, 0, 0, 0)
+transform = Transform3D(0.931721, 0, 0, 0, 0.931721, 0, 0, 0, 0.931721, 0.0172624, -0.662109, 1.93126)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="add_area"]
 shape = SubResource("BoxShape3D_r4sks")

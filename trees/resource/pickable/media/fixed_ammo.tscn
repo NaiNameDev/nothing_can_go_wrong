@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://b6bah04qrbeh6"]
+
+[ext_resource type="PackedScene" uid="uid://ba58fwlen7ohf" path="res://trees/entity/player/media/lazy_ammo.glb" id="1_k8jju"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_xc22k"]
+size = Vector3(0.4, 0.2, 0.4)
+
+[node name="fixed_ammo" type="CollisionShape3D"]
+shape = SubResource("BoxShape3D_xc22k")
+
+[node name="lazy_ammo" parent="." instance=ExtResource("1_k8jju")]

@@ -1,17 +1,11 @@
 extends Node3D
 
-
-# Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	EventBus.connect("change_quota", change_quota)
+	GlobalVariables.connect("quota_changed", quota_changed)
+	EventBus.gl_event_timer.connect("timeout", update_time)
 
-func change_quota(v: int):
-	match v:
-		0:
-			$info_panel/now_note.text = "enable generator!"
-		1:
-			$info_panel/now_note.text = "enable system"
-		2:
-			$info_panel/now_note.text = "work"
-		3:
-			pass
+func update_time():
+	$info_panel/now_note2.text = "time left: " + str(round(EventBus.timer_to_day_end.time_left))
+
+func quota_changed(v: int):
+	$info_panel/now_note.text = "quota: " + str(v)

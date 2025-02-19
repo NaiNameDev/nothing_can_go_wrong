@@ -1,0 +1,4 @@
+extends CharacterBody3D
+
+signal monstro_touch
+signal monstro_untouch

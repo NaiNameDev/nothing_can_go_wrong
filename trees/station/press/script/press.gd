@@ -4,7 +4,7 @@ extends "res://trees/station/forge/script/forge.gd"
 @export var drop_place2: Node3D
 
 func tick():
-	if works:
+	if works and electrocity:
 		first_res_left -= first_res_per_second
 		second_res_left -= second_res_per_second
 		strength_left -= strength_per_second

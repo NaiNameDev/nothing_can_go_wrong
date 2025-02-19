@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Pickable" load_steps=3 format=3 uid="uid://ccyh7wic4f07b"]
+
+[ext_resource type="PackedScene" uid="uid://b6bah04qrbeh6" path="res://trees/resource/pickable/media/fixed_ammo.tscn" id="1_r1h3v"]
+[ext_resource type="Script" path="res://trees/resource/pickable/script/pickable.gd" id="1_rad0m"]
+
+[resource]
+script = ExtResource("1_rad0m")
+name = "shotgun ammo"
+model = ExtResource("1_r1h3v")
+adding = 6.0

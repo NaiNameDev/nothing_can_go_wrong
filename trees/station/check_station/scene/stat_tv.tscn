@@ -71,7 +71,7 @@ shape = SubResource("ConcavePolygonShape3D_vw888")
 [node name="text" type="Node3D" parent="."]
 
 [node name="foges" type="Label3D" parent="text"]
-transform = Transform3D(-7.6058e-09, 0, 0.29, 0, 0.29, 0, -0.194179, 0, -1.41464e-08, 0.653006, 0.391507, 0.400391)
+transform = Transform3D(-6.31889e-09, 0, 0.29, 0, 0.29, 0, -0.161324, 0, -1.41464e-08, 0.653006, 0.391507, 0.282333)
 text = "forges
 "
 font_size = 48
@@ -95,7 +95,7 @@ text = "forges
 font_size = 48
 
 [node name="presses" type="Label3D" parent="text"]
-transform = Transform3D(-7.6058e-09, 0, 0.29, 0, 0.29, 0, -0.194179, 0, -1.41464e-08, 0.653006, 0.391507, 0.0105714)
+transform = Transform3D(-6.31889e-09, 0, 0.29, 0, 0.29, 0, -0.161324, 0, -1.41464e-08, 0.653006, 0.391507, 0.0100173)
 text = "presses"
 font_size = 48
 
@@ -118,7 +118,7 @@ text = "forges
 font_size = 48
 
 [node name="handles" type="Label3D" parent="text"]
-transform = Transform3D(-7.6058e-09, 0, 0.29, 0, 0.29, 0, -0.194179, 0, -1.41464e-08, 0.653006, 0.391507, -0.398975)
+transform = Transform3D(-6.31889e-09, 0, 0.29, 0, 0.29, 0, -0.161324, 0, -1.41464e-08, 0.653006, 0.391507, -0.270461)
 text = "handlers"
 font_size = 48
 

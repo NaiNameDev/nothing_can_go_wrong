@@ -1,18 +1,25 @@
-[gd_scene load_steps=19 format=4 uid="uid://cb0q62ehhmupi"]
+[gd_scene load_steps=21 format=4 uid="uid://cb0q62ehhmupi"]
 
 [ext_resource type="Texture2D" uid="uid://dbcaalfo48oom" path="res://trees/level/level/media/glb/red_light_metal.png" id="1_fvgo2"]
+[ext_resource type="Script" path="res://trees/entity/monstr/script/for_monstro.gd" id="2_o1s3c"]
 
 [sub_resource type="GDScript" id="GDScript_ux28y"]
 resource_name = "light_src"
 script/source = "extends Node3D
 
-
-# Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	#on_event()
-	EventBus.connect(\"event_hapend\", on_event)
-	
+	on_event()
 	EventBus.connect(\"enable_disable_system\", on_off)
+	$for_monstro.connect(\"monstro_touch\", monstro_touch)
+	$for_monstro.connect(\"monstro_untouch\", monstro_untouch)
+
+func monstro_touch():
+	print(\"touch\")
+	$OmniLight3D.visible = false
+
+func monstro_untouch():
+	print(\"untouch\")
+	$OmniLight3D.visible = true
 
 func on_off(v: bool):
 	if v:
@@ -277,6 +284,9 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_nip3i")
 
+[sub_resource type="SphereShape3D" id="SphereShape3D_dnn5w"]
+radius = 0.201552
+
 [node name="red_light" type="Node3D"]
 transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0, 0, 0)
 script = SubResource("GDScript_ux28y")
@@ -324,3 +334,11 @@ light_bake_mode = 1
 shadow_enabled = true
 distance_fade_enabled = true
 omni_range = 10.0
+
+[node name="for_monstro" type="CharacterBody3D" parent="."]
+collision_layer = 16
+collision_mask = 16
+script = ExtResource("2_o1s3c")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="for_monstro"]
+shape = SubResource("SphereShape3D_dnn5w")

@@ -83,8 +83,10 @@ func _ready() -> void:
 
 func on_off(v: bool):
 	if v:
+		infoer.visible = true
 		electrocity = true
 	else:
+		infoer.visible = false
 		electrocity = false
 
 func on_out_set(v):
@@ -95,9 +97,9 @@ func on_out_set(v):
 		out_now = 0
 
 func update_info():
-	infoer.get_child(0).text = str(first_res_left)
-	infoer.get_child(1).text = str(second_res_left)
-	infoer.get_child(2).text = str(strength_left)
+	infoer.get_child(0).text = str(first_res_name) + ": " + str(first_res_left)
+	infoer.get_child(1).text = str(second_res_name) + ": " + str(second_res_left)
+	infoer.get_child(2).text = "strength: " + str(strength_left)
 	EventBus.update_info.emit(station_name, station_id, first_res_left, second_res_left, strength_left, works)
 
 func tick():

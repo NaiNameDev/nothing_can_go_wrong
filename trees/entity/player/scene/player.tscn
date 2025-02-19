@@ -1,18 +1,25 @@
-[gd_scene load_steps=5 format=3 uid="uid://dwwd5pfn33hqv"]
+[gd_scene load_steps=7 format=3 uid="uid://dwwd5pfn33hqv"]
 
 [ext_resource type="Script" path="res://trees/entity/player/script/player.gd" id="1_1v7up"]
 [ext_resource type="Script" path="res://trees/entity/player/script/camera.gd" id="1_w6nco"]
+[ext_resource type="Resource" uid="uid://cwi1nwdy3e5cl" path="res://trees/resource/pickable/resource/pick_me_shot_gun.tres" id="2_id4wb"]
+[ext_resource type="Resource" uid="uid://ccyh7wic4f07b" path="res://trees/resource/pickable/resource/ammo.tres" id="3_vni8u"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ofvoh"]
+height = 1.87629
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_ve07r"]
 
 [node name="Player" type="CharacterBody3D" node_paths=PackedStringArray("camera", "place_for_hand", "action_ray", "throw_target")]
+collision_layer = 41
+collision_mask = 41
 script = ExtResource("1_1v7up")
 camera = NodePath("Camera3D")
 place_for_hand = NodePath("Camera3D/place")
 action_ray = NodePath("Camera3D/RayCast3D")
 throw_target = NodePath("Camera3D/Node3D")
+shotgun = ExtResource("2_id4wb")
+ammo = ExtResource("3_vni8u")
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
@@ -35,10 +42,22 @@ shape = SubResource("CapsuleShape3D_ofvoh")
 [node name="debug_canvas" type="CanvasLayer" parent="."]
 
 [node name="Label" type="Label" parent="debug_canvas"]
-offset_left = 583.0
-offset_top = 623.0
-offset_right = 623.0
-offset_bottom = 646.0
+offset_left = 1.0
+offset_top = 213.0
+offset_right = 970.0
+offset_bottom = 255.0
+scale = Vector2(0.369627, 0.369627)
+theme_override_font_sizes/font_size = 30
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="debug_canvas"]
+offset_left = 1.0
+offset_top = 224.0
+offset_right = 970.0
+offset_bottom = 266.0
+scale = Vector2(0.369627, 0.369627)
+theme_override_font_sizes/font_size = 30
+horizontal_alignment = 2
 
 [node name="Sprite2D" type="Sprite2D" parent="debug_canvas"]
 position = Vector2(180, 120)
@@ -48,5 +67,7 @@ texture = SubResource("CanvasTexture_ve07r")
 [node name="Sprite2D2" type="Sprite2D" parent="debug_canvas"]
 visible = false
 position = Vector2(180, 120)
-scale = Vector2(3, 3.429)
+scale = Vector2(3, 3)
 texture = SubResource("CanvasTexture_ve07r")
+
+[node name="AudioListener3D" type="AudioListener3D" parent="."]
