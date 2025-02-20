@@ -281,7 +281,7 @@ libraries = {
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.138762, -0.26755)
 
 [node name="Label3D" type="Label3D" parent="info"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.35949, 0.737568, 1.26302)
+transform = Transform3D(0.63, 0, 0, 0, 0.63, 0, 0, 0, 0.63, 0.35949, 0.737568, 1.26302)
 text = "asdasdsd"
 
 [node name="Label3D2" type="Label3D" parent="info"]

@@ -30,6 +30,8 @@ func _ready() -> void:
 	shot_gun_ammo_button.connect("on_press", buy_shot_gun_ammo)
 	
 	EventBus.connect("enable_disable_system", on_off)
+	
+	gl_money_changed(GlobalVariables.gl_money)
 
 var can = true
 

@@ -3,6 +3,19 @@ extends CharacterBody3D
 @onready var agent = $NavigationAgent3D
 @export var speed: int = 2
 
+var health: int = 3:
+	set(v):
+		health = v
+		if v <= 0:
+			death()
+
+func death():
+	queue_free()
+
+func damage(dm):
+	health -= dm
+	print("hit")
+
 func _ready() -> void:
 	$Area3D.connect("body_entered", on_touch)
 	$Area3D.connect("body_exited", on_untouch)

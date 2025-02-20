@@ -16,6 +16,8 @@ var ammo_load: int = 1
 
 var hand_buffer: Pickable = null: set = on_item_set
 
+@export var guide = false
+
 func _ready() -> void:
 	GlobalVariables.player = self
 	
@@ -26,7 +28,8 @@ func _ready() -> void:
 	EventBus.connect("generator_down", gena_down)
 	EventBus.connect("lose", death)
 	
-	GlobalFunctions.play_sound(Vector3.ZERO, "res://trees/entity/player/media/sound/hello.wav", self)
+	if GlobalVariables.gl_day_counter == 1 and guide == false:
+		GlobalFunctions.play_sound(Vector3.ZERO, "res://trees/entity/player/media/sound/hello.wav", self, -20)
 
 func _physics_process(delta: float) -> void:
 	if not is_on_floor(): velocity += get_gravity() * delta
@@ -54,7 +57,20 @@ func _input(event: InputEvent) -> void:
 	if Input.is_action_just_pressed("action") and hand_buffer == shotgun:
 		shot()
 	
+	if Input.is_action_just_pressed("back"):
+		$debug_canvas/Control.visible = !$debug_canvas/Control.visible
+		if $debug_canvas/Control.visible:
+			velocity = Vector3.ZERO
+			can_move = false
+			$Camera3D.can = false
+			Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+		else:
+			can_move = true
+			$Camera3D.can = true
+			Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+	
 	if Input.is_action_just_pressed("drop"):
+		#GlobalFunctions.drop_item(camera.global_position, throw_target.global_position, load("res://trees/resource/pickable/resource/box_of_bolts.tres"))
 		if hand_buffer:
 			GlobalFunctions.drop_item(camera.global_position, throw_target.global_position, hand_buffer)
 			hand_buffer = null
@@ -79,6 +95,8 @@ func reload():
 
 func shot():
 	if ammo_load > 0:
+		if $Camera3D/shot_ray.get_collider():
+			$Camera3D/shot_ray.get_collider().get_parent().damage(1)
 		ammo_load -= 1
 		update_shotgun_info()
 
@@ -86,21 +104,22 @@ func update_shotgun_info():
 	$debug_canvas/Label2.text = str(ammo_load) + "/" + str(ammo_have)
 
 func day_end():
-	GlobalFunctions.play_sound(Vector3.ZERO, "res://trees/entity/player/media/sound/day_end.wav", self)
+	GlobalFunctions.play_sound(Vector3.ZERO, "res://trees/entity/player/media/sound/day_end.wav", self, -20)
 
 func monster():
-	GlobalFunctions.play_sound(Vector3.ZERO, "res://trees/entity/player/media/sound/monster_warn.wav", self)
+	GlobalFunctions.play_sound(Vector3.ZERO, "res://trees/entity/player/media/sound/monster_warn.wav", self, -20)
 
 func fast_death():
-	get_tree().reload_current_scene()
+	GlobalVariables.gl_money = EventBus.start_money
+	get_tree().change_scene_to_file("res://trees/UI/menu/control.tscn")
 
 func death():
-	GlobalFunctions.play_sound(Vector3.ZERO, "res://trees/entity/player/media/sound/replacing.wav", self)
+	GlobalFunctions.play_sound(Vector3.ZERO, "res://trees/entity/player/media/sound/replacing.wav", self, -20)
 	await get_tree().create_timer(12).timeout
-	get_tree().reload_current_scene()
+	get_tree().change_scene_to_file("res://trees/UI/menu/control.tscn")
 
 func gena_down():
-	GlobalFunctions.play_sound(Vector3.ZERO, "res://trees/entity/player/media/sound/generator_down.wav", self)
+	GlobalFunctions.play_sound(Vector3.ZERO, "res://trees/entity/player/media/sound/generator_down.wav", self, -20)
 
 func on_item_set(v):
 	hand_buffer = v
@@ -131,3 +150,9 @@ func move():
 	else:
 		velocity.x = move_toward(velocity.x, 0, speed)
 		velocity.z = move_toward(velocity.z, 0, speed)
+
+
+func _on_button_pressed() -> void:
+	$Camera3D.can = true
+	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+	$debug_canvas/Control.visible = false

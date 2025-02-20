@@ -1,5 +1,7 @@
 extends Node3D
 
+signal done
+
 @export var station_id: int = 0
 @export var station_name: String
 @export var works: bool = true
@@ -94,6 +96,7 @@ func on_out_set(v):
 	
 	if out_now > out_max and drop_place:
 		GlobalFunctions.drop_item(drop_place.global_position, drop_place.global_position, out)
+		done.emit()
 		out_now = 0
 
 func update_info():

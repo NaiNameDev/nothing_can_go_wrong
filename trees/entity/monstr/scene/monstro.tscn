@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://30lmibqivgah"]
+[gd_scene load_steps=9 format=3 uid="uid://30lmibqivgah"]
 
 [ext_resource type="Script" path="res://trees/entity/monstr/script/monstro.gd" id="1_30no6"]
 
@@ -18,10 +18,13 @@ rings = 12
 radius = 4.70106
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_d0bx5"]
-radius = 2.01526
+radius = 0.864422
 
 [sub_resource type="BoxMesh" id="BoxMesh_jrtga"]
 size = Vector3(0.2, 2, 2)
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_6kyg0"]
+radius = 0.998919
 
 [node name="monstro" type="CharacterBody3D"]
 script = ExtResource("1_30no6")
@@ -72,6 +75,13 @@ mesh = SubResource("BoxMesh_jrtga")
 
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
 simplify_path = true
-debug_enabled = true
+
+[node name="CharacterBody3D" type="CharacterBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.18475, 0)
+collision_layer = 4096
+collision_mask = 4096
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D"]
+shape = SubResource("SphereShape3D_6kyg0")
 
 [connection signal="body_entered" from="death_zone" to="." method="_on_death_zone_body_entered"]

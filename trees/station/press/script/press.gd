@@ -21,4 +21,5 @@ func on_out_set(v):
 	
 	if out_now > out_max and drop_place:
 		GlobalFunctions.drop_item(drop_place.global_position, drop_place2.global_position, out)
+		done.emit()
 		out_now = 0

@@ -10,6 +10,7 @@ signal win_day
 
 func add_quota():
 	gl_daly_qt_max += gl_daly_qt_adding
+	gl_qt_now = gl_daly_qt_max
 
 var gl_money: int = 300:
 	set(v):
