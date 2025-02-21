@@ -14,11 +14,9 @@ func _ready() -> void:
 	$for_monstro.connect(\"monstro_untouch\", monstro_untouch)
 
 func monstro_touch():
-	print(\"touch\")
 	$OmniLight3D.visible = false
 
 func monstro_untouch():
-	print(\"untouch\")
 	$OmniLight3D.visible = true
 
 func on_off(v: bool):

@@ -20,6 +20,7 @@ var gare4 = true
 
 func _ready() -> void:
 	await get_tree().create_timer(0.1).timeout
+	EventBus.timer_to_day_end.stop()
 	GlobalVariables.gl_money = 1000
 	EventBus.enable_disable_system.emit(true)
 	

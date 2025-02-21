@@ -4,7 +4,7 @@ signal done
 
 @export var station_id: int = 0
 @export var station_name: String
-@export var works: bool = true
+@export var works: bool = false
 @onready var add_area: Node3D = $add_area
 
 @export_category("names")
@@ -54,7 +54,7 @@ signal done
 			works = false
 			EventBus.forge_break.emit(station_id, station_name + " broked", station_name)
 @export var strength_max: float = 1.0
-@export var strength_per_second: float = 0.001
+@export var strength_per_second: float = 0.003
 
 @export_category("out")
 @export var out: Pickable
@@ -107,6 +107,8 @@ func update_info():
 
 func tick():
 	if works and electrocity:
+		if $AudioStreamPlayer3D.playing == false:
+			$AudioStreamPlayer3D.play()
 		light_light.visible = true
 		light.visible = true
 		des_light.visible = false
@@ -117,6 +119,8 @@ func tick():
 		
 		update_info()
 	else:
+		if $AudioStreamPlayer3D.playing == true:
+			$AudioStreamPlayer3D.stop()
 		light_light.visible = false
 		des_light.visible = true
 		light.visible = false

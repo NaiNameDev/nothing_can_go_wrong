@@ -1,0 +1,44 @@
+[gd_scene load_steps=3 format=3 uid="uid://dwa6v5hwepf2b"]
+
+[ext_resource type="Texture2D" uid="uid://dt6khob6sq47q" path="res://globales/a.png" id="1_rhc3c"]
+[ext_resource type="Script" path="res://trees/UI/WIN_FUCK/finaly_i_end_this_shit.gd" id="1_tlsgb"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_tlsgb")
+
+[node name="a" type="Sprite2D" parent="."]
+position = Vector2(190, 118)
+scale = Vector2(0.367647, 0.367647)
+texture = ExtResource("1_rhc3c")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 135.0
+offset_top = 105.0
+offset_right = 214.0
+offset_bottom = 128.0
+text = "YOU WON"
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 0
+offset_left = 6.0
+offset_top = 209.0
+offset_right = 128.0
+offset_bottom = 232.0
+text = "sorry for the bugs :("
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 249.0
+offset_top = 203.0
+offset_right = 356.0
+offset_bottom = 234.0
+text = "go to menu"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

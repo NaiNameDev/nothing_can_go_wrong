@@ -11,6 +11,9 @@ var health: int = 3:
 
 func death():
 	queue_free()
+	EventBus.monster_event = false
+	await get_tree().create_timer(5).timeout
+	EventBus.enable_disable_system.emit(true)
 
 func damage(dm):
 	health -= dm
@@ -20,7 +23,16 @@ func _ready() -> void:
 	$Area3D.connect("body_entered", on_touch)
 	$Area3D.connect("body_exited", on_untouch)
 
+
+var can = true
 func _physics_process(delta: float) -> void:
+	if can:
+		$AudioStreamPlayer3D.play()
+		can = false
+		await  get_tree().create_timer(randi_range(10,40)).timeout
+		can = true
+		
+	
 	update_pos(GlobalVariables.player.global_position)
 	move()
 	
@@ -42,4 +54,5 @@ func on_untouch(body: Node3D):
 
 
 func _on_death_zone_body_entered(body: Node3D) -> void:
+	queue_free()
 	body.fast_death()

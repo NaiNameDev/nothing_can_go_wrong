@@ -12,7 +12,7 @@ func add_quota():
 	gl_daly_qt_max += gl_daly_qt_adding
 	gl_qt_now = gl_daly_qt_max
 
-var gl_money: int = 300:
+var gl_money: int = 3030:
 	set(v):
 		gl_money = v
 		money_changed.emit(gl_money)

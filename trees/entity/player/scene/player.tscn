@@ -1,9 +1,23 @@
-[gd_scene load_steps=8 format=3 uid="uid://dwwd5pfn33hqv"]
+[gd_scene load_steps=11 format=3 uid="uid://dwwd5pfn33hqv"]
 
 [ext_resource type="Script" path="res://trees/entity/player/script/player.gd" id="1_1v7up"]
 [ext_resource type="Script" path="res://trees/entity/player/script/camera.gd" id="1_w6nco"]
 [ext_resource type="Resource" uid="uid://cwi1nwdy3e5cl" path="res://trees/resource/pickable/resource/pick_me_shot_gun.tres" id="2_id4wb"]
 [ext_resource type="Resource" uid="uid://ccyh7wic4f07b" path="res://trees/resource/pickable/resource/ammo.tres" id="3_vni8u"]
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_jno60"]
+direction = Vector3(0, 0, -1)
+spread = 20.0
+initial_velocity_min = 5.0
+initial_velocity_max = 7.0
+gravity = Vector3(0, -4.2, 0)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jq3bs"]
+albedo_color = Color(1, 1, 0, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_fjdo3"]
+material = SubResource("StandardMaterial3D_jq3bs")
+size = Vector3(0.02, 0.02, 0.02)
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ofvoh"]
 height = 1.87629
@@ -41,6 +55,18 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2)
 
 [node name="place" type="Node3D" parent="Camera3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.182156, -0.327432, -0.546148)
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="Camera3D/place"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.378607)
+emitting = false
+one_shot = true
+explosiveness = 0.78
+process_material = SubResource("ParticleProcessMaterial_jno60")
+draw_pass_1 = SubResource("BoxMesh_fjdo3")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Camera3D/place/GPUParticles3D"]
+visible = false
+light_color = Color(1, 1, 0, 1)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("CapsuleShape3D_ofvoh")

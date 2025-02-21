@@ -1,6 +1,7 @@
-[gd_scene load_steps=9 format=3 uid="uid://30lmibqivgah"]
+[gd_scene load_steps=10 format=3 uid="uid://30lmibqivgah"]
 
 [ext_resource type="Script" path="res://trees/entity/monstr/script/monstro.gd" id="1_30no6"]
+[ext_resource type="AudioStream" uid="uid://bodyyg1cowe5m" path="res://trees/entity/player/media/sound/monstro2.wav" id="2_7ljss"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_yd414"]
 height = 2.42581
@@ -83,5 +84,8 @@ collision_mask = 4096
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D"]
 shape = SubResource("SphereShape3D_6kyg0")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("2_7ljss")
 
 [connection signal="body_entered" from="death_zone" to="." method="_on_death_zone_body_entered"]

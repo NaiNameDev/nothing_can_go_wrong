@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=4 uid="uid://cq502mwuo50uu"]
+[gd_scene load_steps=31 format=4 uid="uid://cq502mwuo50uu"]
 
 [ext_resource type="Script" path="res://trees/station/handler/script/handler.gd" id="1_knxhl"]
 [ext_resource type="Resource" uid="uid://b766kg3eudqqf" path="res://trees/resource/pickable/resource/box_of_bolts.tres" id="2_k2x0p"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://c7ddhjj2vm15j" path="res://trees/station/handler/media/handler_btn_pls_blue_btn.png" id="7_lnq2q"]
 [ext_resource type="Texture2D" uid="uid://cdjeaba6usbug" path="res://trees/station/handler/media/handler_metal_hall.png" id="8_3i5ca"]
 [ext_resource type="PackedScene" uid="uid://vop6r1lr8g7w" path="res://trees/station/check_station/media/tv.glb" id="9_dm60q"]
+[ext_resource type="AudioStream" uid="uid://dehpkssopn7k2" path="res://trees/entity/player/media/sound/handler2.wav" id="11_lxkua"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5kg3b"]
 resource_name = "btn"
@@ -263,7 +264,7 @@ skeleton = NodePath("")
 shape = SubResource("ConcavePolygonShape3D_03omv")
 
 [node name="Cylinder" type="MeshInstance3D" parent="handler"]
-transform = Transform3D(-4.49488e-08, 0.237725, -7.45058e-09, -0.986487, -1.02509e-08, 0.163837, 0.163837, 3.49793e-09, 0.986487, 0.5019, 0.986959, 0.542971)
+transform = Transform3D(-4.37114e-08, 0.237725, 0, -0.986487, -1.02509e-08, 0.163837, 0.163837, 1.70248e-09, 0.986487, 0.5019, 0.986959, 0.542971)
 mesh = SubResource("ArrayMesh_ew3xk")
 skeleton = NodePath("")
 
@@ -307,3 +308,7 @@ shape = SubResource("BoxShape3D_r4sks")
 
 [node name="drop_point" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.45834)
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("11_lxkua")
+volume_db = -10.0

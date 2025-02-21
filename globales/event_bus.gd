@@ -35,6 +35,8 @@ var ZAEBALI_KASTILI_EBANIE: bool = false
 var gl_event_timer: Timer
 
 func _ready() -> void:
+	GlobalVariables.gl_qt_now = GlobalVariables.gl_day_counter * 10
+	
 	if GlobalVariables.gl_day_counter == 1:
 		GlobalVariables.gl_money = 300
 	
@@ -67,7 +69,7 @@ func _ready() -> void:
 	ZAEBALI_KASTILI_EBANIE = true
 
 func game_over_end_fucking_fuck_fuck():
-	get_tree().quit()
+	get_tree().change_scene_to_file("res://trees/UI/WIN_FUCK/FINALY_I_END_THIS_SHIT.tscn")
 
 func gen_state_change(v: bool):
 	if GlobalVariables.day == false and dayend == false and ZAEBALI_KASTILI_EBANIE == true:
@@ -96,12 +98,17 @@ func day_end():
 	GlobalVariables.day = false
 	timer_to_day_end.stop()
 
+var ev_gare: bool = true
+
 func random_event():
 	if !monster_event and GlobalVariables.day == true:
 		if randi_range(0, generator_down_chanse) == 1 and generator_state and GlobalVariables.gl_day_counter > 1:
 			enable_disable_system.emit(false)
 			generator_down.emit()
 			print("gen")
+			ev_gare = false
+			await get_tree().create_timer(30).timeout
+			ev_gare = true
 		if randi_range(0, monster_chanse) == 1 and GlobalVariables.gl_day_counter > 2:
 			monster.emit()
 			var mns = monstro.instantiate()
@@ -109,4 +116,7 @@ func random_event():
 			add_monstro.emit(mns)
 			monster_event = true
 			enable_disable_system.emit(false)
+			ev_gare = false
+			await get_tree().create_timer(30).timeout
+			ev_gare = true
 			print("atashi monstra")

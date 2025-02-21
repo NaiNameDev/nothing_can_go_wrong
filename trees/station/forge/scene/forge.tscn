@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=4 uid="uid://bhdj1atqlqbn4"]
+[gd_scene load_steps=30 format=4 uid="uid://bhdj1atqlqbn4"]
 
 [ext_resource type="Script" path="res://trees/station/forge/script/forge.gd" id="1_t20ej"]
 [ext_resource type="Resource" uid="uid://cei8ljy6xmdwy" path="res://trees/resource/pickable/resource/metal.tres" id="2_0hmlq"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://dpwra6bthc4r6" path="res://trees/station/forge/media/forge_metal.png" id="8_r4i51"]
 [ext_resource type="Texture2D" uid="uid://oa8mums6uu3l" path="res://trees/station/forge/media/forge_fire_metal.png" id="9_6dy44"]
 [ext_resource type="PackedScene" uid="uid://vop6r1lr8g7w" path="res://trees/station/check_station/media/tv.glb" id="10_1b6vo"]
+[ext_resource type="AudioStream" uid="uid://qr2e57y8ym55" path="res://trees/entity/player/media/sound/fire.wav" id="11_lq7bm"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_oplnp"]
 
@@ -316,3 +317,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.183945, -0.230927, 2.06616
 visible = false
 light_color = Color(1, 0.611765, 0, 1)
 light_specular = 0.0
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("11_lq7bm")
+volume_db = -5.0

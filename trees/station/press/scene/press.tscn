@@ -1,4 +1,4 @@
-[gd_scene load_steps=54 format=4 uid="uid://crya2h02hym21"]
+[gd_scene load_steps=56 format=4 uid="uid://crya2h02hym21"]
 
 [ext_resource type="Script" path="res://trees/station/press/script/press.gd" id="1_r2nep"]
 [ext_resource type="Resource" uid="uid://biih5ru3v1i5o" path="res://trees/resource/pickable/resource/workpiece.tres" id="2_qklwv"]
@@ -10,6 +10,8 @@
 [ext_resource type="Texture2D" uid="uid://bhcn5ku1nuoqm" path="res://trees/station/press/media/press_metal.png" id="8_v6vwe"]
 [ext_resource type="Texture2D" uid="uid://875hegowfcg1" path="res://trees/station/press/media/press_metal_beton.png" id="9_m6sog"]
 [ext_resource type="PackedScene" uid="uid://vop6r1lr8g7w" path="res://trees/station/check_station/media/tv.glb" id="10_jnfah"]
+[ext_resource type="AudioStream" uid="uid://bn6x6ou2omdg3" path="res://trees/entity/player/media/sound/metal_BOOM1.wav" id="11_r56x3"]
+[ext_resource type="AudioStream" uid="uid://swm701yvil6r" path="res://trees/entity/player/media/sound/metal_BOOM2.wav" id="12_kivyw"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_7c7xr"]
 
@@ -730,12 +732,12 @@ collision_mask = 5
 shape = SubResource("ConcavePolygonShape3D_w5p3b")
 
 [node name="Cylinder_002" type="MeshInstance3D" parent="press"]
-transform = Transform3D(-8.52651e-14, 0.370175, -5.43719e-07, 0.866026, 1.00636e-07, 0.5, 0.5, -1.74306e-07, -0.866026, 0, 3.15636, -0.506157)
+transform = Transform3D(3.57627e-07, 0.370175, -1.36963e-06, 0.866026, 1.38852e-07, 0.5, 0.5, -5.05268e-07, -0.866026, 0, 3.15636, -0.506157)
 mesh = SubResource("ArrayMesh_ivjjf")
 skeleton = NodePath("")
 
 [node name="Cylinder_003" type="MeshInstance3D" parent="press"]
-transform = Transform3D(-4.36898e-08, 0.370175, 9.31323e-10, -0.999732, -1.61765e-08, 0.0231626, 0.0231626, 2.9946e-11, 0.999732, 0, 3.39419, 0.484577)
+transform = Transform3D(-4.36898e-08, 0.370175, 9.31323e-10, -0.999732, -1.61765e-08, 0.0231626, 0.0231626, 2.99459e-11, 0.999732, 0, 3.39419, 0.484577)
 mesh = SubResource("ArrayMesh_5o770")
 skeleton = NodePath("")
 
@@ -825,3 +827,11 @@ root_node = NodePath("../Cube_005")
 libraries = {
 "": SubResource("AnimationLibrary_kjnbv")
 }
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("11_r56x3")
+volume_db = -5.0
+
+[node name="AudioStreamPlayer3D2" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("12_kivyw")
+volume_db = -5.0

@@ -10,13 +10,15 @@ extends CharacterBody3D
 
 var ammo_have: int = 0
 var ammo_max: int = 2
-var ammo_load: int = 1
+var ammo_load: int = 0
 @export var shotgun: Pickable
 @export var ammo: Pickable
 
 var hand_buffer: Pickable = null: set = on_item_set
 
 @export var guide = false
+
+var step_gete: bool = true
 
 func _ready() -> void:
 	GlobalVariables.player = self
@@ -30,13 +32,19 @@ func _ready() -> void:
 	
 	if GlobalVariables.gl_day_counter == 1 and guide == false:
 		GlobalFunctions.play_sound(Vector3.ZERO, "res://trees/entity/player/media/sound/hello.wav", self, -20)
+	
 
 func _physics_process(delta: float) -> void:
+	print(EventBus.timer_to_day_end.time_left)
+	
 	if not is_on_floor(): velocity += get_gravity() * delta
 	if can_move: move()
 	move_and_slide()
 
 func _input(event: InputEvent) -> void:
+	if Input.is_action_just_pressed("action") and hand_buffer == shotgun:
+		shot()
+	
 	if action_ray.get_collider():
 		$debug_canvas/Sprite2D2.visible = true
 		if Input.is_action_just_pressed("action"):
@@ -53,9 +61,6 @@ func _input(event: InputEvent) -> void:
 				action_ray.get_collider().on_press.emit(hand_buffer)
 	else:
 		$debug_canvas/Sprite2D2.visible = false
-	
-	if Input.is_action_just_pressed("action") and hand_buffer == shotgun:
-		shot()
 	
 	if Input.is_action_just_pressed("back"):
 		$debug_canvas/Control.visible = !$debug_canvas/Control.visible
@@ -95,10 +100,17 @@ func reload():
 
 func shot():
 	if ammo_load > 0:
+		GlobalFunctions.play_sound(Vector3.ZERO, "res://trees/entity/player/media/sound/shoting.wav", self)
+		$Camera3D/place/GPUParticles3D.emitting = true
+		
 		if $Camera3D/shot_ray.get_collider():
 			$Camera3D/shot_ray.get_collider().get_parent().damage(1)
 		ammo_load -= 1
+		$Camera3D.rotate_x(45)
 		update_shotgun_info()
+		$Camera3D/place/GPUParticles3D/OmniLight3D.visible = true
+		await get_tree().create_timer(0.3).timeout
+		$Camera3D/place/GPUParticles3D/OmniLight3D.visible = false
 
 func update_shotgun_info():
 	$debug_canvas/Label2.text = str(ammo_load) + "/" + str(ammo_have)
@@ -110,10 +122,12 @@ func monster():
 	GlobalFunctions.play_sound(Vector3.ZERO, "res://trees/entity/player/media/sound/monster_warn.wav", self, -20)
 
 func fast_death():
+	EventBus.timer_to_day_end.stop()
 	GlobalVariables.gl_money = EventBus.start_money
 	get_tree().change_scene_to_file("res://trees/UI/menu/control.tscn")
 
 func death():
+	EventBus.timer_to_day_end.stop()
 	GlobalFunctions.play_sound(Vector3.ZERO, "res://trees/entity/player/media/sound/replacing.wav", self, -20)
 	await get_tree().create_timer(12).timeout
 	get_tree().change_scene_to_file("res://trees/UI/menu/control.tscn")
@@ -136,9 +150,10 @@ func on_item_set(v):
 		place_for_hand.add_child(a)
 	else:
 		$debug_canvas/Label.text = ""
-		place_for_hand.get_child(0).queue_free()
+		place_for_hand.get_child(1).queue_free()
 
 func added():
+	GlobalFunctions.play_sound(Vector3.ZERO, "res://trees/entity/player/media/sound/adding.wav", self, -10)
 	hand_buffer = null
 
 func move():
@@ -147,6 +162,13 @@ func move():
 	if direction:
 		velocity.x = direction.x * speed
 		velocity.z = direction.z * speed
+		
+		if step_gete:
+			step_gete = false
+			GlobalFunctions.play_sound(Vector3.ZERO, "res://trees/entity/player/media/sound/walkus.wav", self, -25)
+			await get_tree().create_timer(0.6).timeout
+			step_gete = true
+		
 	else:
 		velocity.x = move_toward(velocity.x, 0, speed)
 		velocity.z = move_toward(velocity.z, 0, speed)
